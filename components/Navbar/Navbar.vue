@@ -13,64 +13,50 @@
     </button>
     <div class="container">
       <div class="navbar-collapse main-navbar">
-        <nuxt-link :to="'/'" class="heart" tag="div" type="button">
-          <img src="https://javdata.sfo2.cdn.digitaloceanspaces.com/logo-short-02.png" />
-        </nuxt-link>
+        <nuxt-link :to="'/'" class="heart" tag="div" type="button">Cuarentime</nuxt-link>
         <div class="search-navbar">
           <div class="row width-fix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="input-group mb-3">
-                <input
-                  @keyup.enter="search"
-                  v-model="query"
-                  name="query"
-                  type="text"
-                  class="form-control"
-                  placeholder="Search by code, idol or keyword ..."
-                />
-                <div class="input-group-append">
-                  <span class="input-group-text">
-                    <font-awesome-icon
-                      :icon="['fas', 'search']"
-                      @click="search"
-                      class="icon-search-navbar"
-                    />
-                  </span>
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-center">
+              <div class="row justify-content-center">
+                <div class="input-group">
+                  <input
+                    @keyup.enter="search"
+                    v-model="query"
+                    name="query"
+                    type="text"
+                    class="form-control"
+                    placeholder="Busca clases, consejos y más ..."
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <font-awesome-icon
+                        :icon="['fas', 'search']"
+                        @click="search"
+                        class="icon-search-navbar"
+                      />
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row width-fix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto text-center">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-center">
               <ul>
                 <li class="navbar-nav-link">
-                  <nuxt-link :to="'/javs/1'">
-                    <font-awesome-icon :icon="['fab', 'youtube']" class="icon-sidebar" />
-                    <div class="title-sidebar">Javs</div>
-                  </nuxt-link>
-                </li>
-                <li class="navbar-nav-link">
-                  <nuxt-link :to="'/categories'">
+                  <nuxt-link :to="'/categorias'">
                     <font-awesome-icon :icon="['fas', 'layer-group']" class="icon-sidebar" />
-                    <div class="title-sidebar">Categories</div>
+                    <div class="title-sidebar">Categorías</div>
                   </nuxt-link>
                 </li>
                 <li class="navbar-nav-link">
-                  <nuxt-link :to="'/idols/1'">
-                    <font-awesome-icon :icon="['fas', 'venus']" class="icon-sidebar" />
-                    <div class="title-sidebar">Idols</div>
+                  <nuxt-link :to="'/packs'">
+                    <font-awesome-icon :icon="['fas', 'box']" class="icon-sidebar" />
+                    <div class="title-sidebar">Paquetes</div>
                   </nuxt-link>
                 </li>
                 <li class="navbar-nav-link">
-                  <nuxt-link :to="'/favorites/1'">
-                    <font-awesome-icon :icon="['fas', 'heart']" class="icon-sidebar" />
-                    <div class="title-sidebar">Favorites</div>
-                  </nuxt-link>
-                </li>
-                <li class="navbar-nav-link">
-                  <nuxt-link :to="'/history/1'">
-                    <font-awesome-icon :icon="['fas', 'history']" class="icon-sidebar" />
-                    <div class="title-sidebar">History</div>
+                  <nuxt-link :to="'/articulos'">
+                    <font-awesome-icon :icon="['fas', 'newspaper']" class="icon-sidebar" />
+                    <div class="title-sidebar">Artículos</div>
                   </nuxt-link>
                 </li>
               </ul>
@@ -79,21 +65,12 @@
         </div>
         <div class="log-navbar">
           <div class="row width-fix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto text-center">
-              <nuxt-link to="/login" tag="div" class="signin" v-if="!$store.state.token">
-                Sign In
-                <font-awesome-icon :icon="['fas', 'sign-in-alt']" class="icon-navbar" />
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+              <nuxt-link to="/dashboard" tag="div" class="account">
+                <img
+                  src="https://mk0trickyphotos51tq5.kinstacdn.com/wp-content/uploads/2017/08/final-1.png"
+                />
               </nuxt-link>
-              <nuxt-link to="/dashboard" tag="div" class="signin" v-if="$store.state.token">
-                Account
-                <font-awesome-icon :icon="['fas', 'user-astronaut']" class="icon-navbar" />
-              </nuxt-link>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto text-center">
-              <div class="signin" v-if="$store.state.token" @click="logout()">
-                Log Out
-                <font-awesome-icon :icon="['fas', 'sign-out-alt']" class="icon-navbar" />
-              </div>
             </div>
           </div>
         </div>
@@ -107,24 +84,16 @@ export default {
   name: "Navbar",
   data() {
     return {
-      query: ""
+      query: "",
     };
   },
   methods: {
-    search() {
-      if (this.query) {
-        var formatedQuery = this.query.replace(" ", "&");
-        this.$router.replace("/search/1/" + formatedQuery);
-        this.query = "";
-      }
-    },
+    search() {},
     async logout() {
       try {
-        await this.$store.dispatch("logout");
-        this.$router.push({ path: "/" });
       } catch (e) {}
-    }
-  }
+    },
+  },
 };
 </script>
 

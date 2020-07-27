@@ -1,21 +1,9 @@
 nav {
-    top: 2%;
-    left: 0;
     width: 100%;
-    height: 12%;
-    display:flex;align-items:center;
-    background: #000;
-    border-top: 1px solid #E8175D;
-    border-bottom: 1px solid #E8175D;
-    z-index: 6;
-}
-
-.menu-toggle{
-    width: auto;
-    height: auto;
-    padding-right: 1%;
-    color: #f8faff;
-    background-color: #2e2e2e !important;
+    height: 8%;
+    display:flex;
+    align-items:center;
+    background: #4090AA;
 }
 
 .main-navbar{
@@ -23,14 +11,11 @@ nav {
 }
 
 .heart {
-    width: 15%;
+    width: 10%;
     margin: 0 auto;
     display: block;
     margin: initial;
     padding: 0px 0px 0px 0px;
-    img{
-        height: 120px;
-    }
 }
 
 div[type=button]{
@@ -39,39 +24,42 @@ div[type=button]{
 }
 
 .search-navbar{    
-    width: 75%;
-    .input-group-text{
-        background-color: #000;
+    width: 80%;
+    .input-group{
+        width: 80%;
     }
-    input{
+    .input-group-text{
+        background-color: #ffffff;
+    }
+    input{        
         height: 35px !important;
         font-size: 12px !important;
     }
     input, textarea{
-        background-color:#383838;
+        background-color:#ffffff;
         color: #f8faff;
     }
     input:focus{
-        background-color:#383838;
-        color: #f8faff;
-        border-color: #E8175D;
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #E8175D;
+        background-color:#ffffff;
+        color: #383838;
+        border-color: #3dbbe6;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #3dbbe6;
     }
     .icon-search-navbar{
         width: 100%;
-        color: #f8faff;
+        color: #383838;
         cursor: pointer;    
     }
     ul {
         list-style-type: none;
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        font-size: 12px;
+        height: 100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
       }
       
       li {
-        width: 20%;
+        width: 33%;
         float: left;
         height: 100% !important;
         display:flex;
@@ -107,111 +95,21 @@ div[type=button]{
 }
 
 .log-navbar{
+    height: 100%;
     width: 10%;
     color: #f8faff;
     font-size: 12px;
-    letter-spacing: 3px;
+    letter-spacing: 3px;    
     cursor: pointer;  
-    .signin{
-        display:flex;justify-content:flex-end;align-items:center;
-        
-    }
-    .signup{
-        display: inline;
-    }
-    .icon-navbar{
-        margin: 0% 3%;
-    }
-}
-
-@media screen and (min-width: 1601px) and (max-width: 1919px) {
-    nav {
-        height: 15%;
-    }
-    
-    .heart {
+    .account{
+        height: 120px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background-color: #E8175D;
+        border-radius: 10%;
         img{
-            height: 120px;
+            height: 50%;
         }
-    }
-
-    .search-navbar{    
-        input{
-            height: 30px !important;
-            font-size: 11px !important;
-        }
-          
-          li a {
-            font-size: 11px;
-          }
-    }
-}
-
-@media screen and (min-width: 1367px) and (max-width: 1600px) {
-    nav {
-        height: 15%;
-    }
-    
-    .heart {
-        img{
-            height: 120px;
-        }
-    }
-
-    .search-navbar{    
-        input{
-            height: 30px !important;
-            font-size: 11px !important;
-        }
-          
-          li a {
-            font-size: 11px;
-          }
-    }
-}
-
-@media screen and (min-width: 1280px) and (max-width: 1366px) {
-    nav {
-        height: 15%;
-    }
-    
-    .heart {
-        img{
-            height: 110px;
-        }
-    }
-
-    .search-navbar{    
-        input{
-            height: 30px !important;
-            font-size: 10px !important;
-        }
-          
-          li a {
-            font-size: 10px;
-          }
-    }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1279px) {
-    nav {
-        height: 15%;
-    }
-    
-    .heart {
-        img{
-            height: 110px;
-        }
-    }
-
-    .search-navbar{    
-        input{
-            height: 30px !important;
-            font-size: 10px !important;
-        }
-          
-          li a {
-            font-size: 10px;
-          }
     }
 }

@@ -2,8 +2,7 @@
   <footer class="pt-4 footer">
     <div class="copyright py-3">
       <p>
-        © 2020 Copyright:
-        <nuxt-link to="/" tag="a">JAV4Free.watch</nuxt-link>
+        Cuarentime
       </p>
     </div>
   </footer>

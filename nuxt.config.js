@@ -5,20 +5,16 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Jav4Free | Japanese Adult Videos for Free | Streaming Service',
+    title: 'Cuarentime',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://javdata.sfo2.cdn.digitaloceanspaces.com/logo-short-01.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' }
     ],
     script: [
-      { type: 'application/javascript', src: 'http://js.juicyads.com/jam_min.js' },
-      { type: 'application/javascript', innerHTML: 'window.onload=check_mobile(22598,246527)', charset: 'utf-8' },
-      { type: 'application/javascript', src: '//libedgolart.com/t/9/fret/meow4/1768851/brt.js' }
     ]
   },
   /*
@@ -43,9 +39,11 @@ module.exports = {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    /*
     ['@nuxtjs/google-analytics', {
       id: 'UA-71938715-4'
     }]
+    */
   ],
   /*
   ** Nuxt.js modules
