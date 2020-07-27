@@ -1,0 +1,40 @@
+{
+  "name": "jav4free-ssr",
+  "version": "1.0.0",
+  "description": "Jav4Free | Japanese Adult Videos for Free | Streaming Service",
+  "author": "Kuuzou",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-brands-svg-icons": "^5.13.1",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/vue-fontawesome": "^0.1.10",
+    "@nuxtjs/axios": "^5.12.0",
+    "@nuxtjs/device": "^1.2.7",
+    "bootstrap": "^4.5.0",
+    "cookie-universal-nuxt": "^2.1.4",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "jquery": "^3.5.1",
+    "nuxt": "^2.13.3",
+    "nuxt-fontawesome": "^0.4.0",
+    "nuxt-lazy-load": "^1.2.4",
+    "plyr": "^3.6.2",
+    "popper.js": "^1.16.1",
+    "universal-cookie": "^4.0.3",
+    "vue-plyr": "^6.0.4",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.3.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^1.18.9",
+    "sass-loader": "^8.0.2"
+  }
+}

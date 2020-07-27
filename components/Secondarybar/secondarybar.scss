@@ -1,0 +1,100 @@
+.secondarybar{
+    position: fixed;
+    top: 14%;
+    left: 0;
+    width: 100%;
+    height: 4%;
+    display:flex;align-items:center;
+    background: #242424;
+    z-index: 6;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #242424;
+        font-size: 12px;
+        height: 100%;
+      }
+      
+      li {
+        float: left;
+        height: 100% !important;
+        display:flex;align-items:center;
+        border-bottom: 2px solid #242424;
+      }
+      
+      li a {
+        height: 100%;
+        display: inline-flex;
+        color: #f8faff;
+        letter-spacing: 2px;
+        font-size: 11px;
+        text-align: center;
+        justify-content:center;
+        align-items:center;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0px 20px 0px 20px;
+      }
+      
+      li:hover {
+        background: #383838;
+        border-bottom: 3px solid #383838;
+      }
+
+      .icon-sidebar{
+          margin-right: 5px;
+          display:flex;justify-content:center;align-items:center;
+      }
+}
+
+@media screen and (min-width: 1601px) and (max-width: 1919px) {
+  .secondarybar{
+    top: 12%;
+    height: 4%;
+  }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  .secondarybar{
+    top: 11%;
+    height: 4%;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1366px) {
+  .secondarybar{
+    top: 11%;
+    height: 4%;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1279px) {
+  .secondarybar{
+    top: 10%;
+    height: 4%;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 991px) {
+  .secondarybar{
+    top: 9%;
+    height: 3%;
+  }
+}
+
+@media screen and (min-width: 620px) and (max-width: 799px) {
+  .secondarybar{
+    top: 8%;
+    height: 3%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .secondarybar{
+    top: 9%;
+    height: 3%;
+  }
+}

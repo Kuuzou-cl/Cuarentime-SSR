@@ -1,0 +1,30 @@
+.crumbs-content{
+    width: 100%;
+    background-color: #18191a;
+    padding-bottom: 0.2%;
+    margin-bottom: 1%;
+}
+
+.crumbs-content a {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom:  0 !important;
+    color: #f8faff !important;
+}
+
+.crumbs-content a:hover {
+  color: #E8175D !important;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
