@@ -4,66 +4,63 @@
       :to="'/dashboard'"
       class="sidebar-brand d-flex align-items-center justify-content-center"
     >
-      <div class="sidebar-brand-text mx-3">Dashboard Home</div>
+      <div class="sidebar-brand-text mx-3">Inicio</div>
     </nuxt-link>
     <hr class="sidebar-divider my-0" />
     <li class="nav-item active">
       <nuxt-link :to="'/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'undo-alt']" />
-        <span>Return to Website</span>
+        <span>Volver a Cuarentime</span>
       </nuxt-link>
     </li>
     <hr class="sidebar-divider" />
-    <div class="sidebar-heading">Manage Files</div>
+    <div class="sidebar-heading">Tu Perfil</div>
     <li class="nav-item">
       <nuxt-link :to="'/dashboard/uploadFile/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'cloud-upload-alt']" />
-        <span>Upload Files</span>
+        <font-awesome-icon :icon="['fas', 'id-badge']" />
+        <span>Mis Datos</span>
+      </nuxt-link>
+    </li>
+    <li class="nav-item">
+      <nuxt-link :to="'/dashboard/uploadFile/'" class="nav-link">
+        <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
+        <span>Mis Pagos</span>
       </nuxt-link>
     </li>
     <hr class="sidebar-divider" />
-    <div class="sidebar-heading">New Content</div>
+    <div class="sidebar-heading">Tu Contenido</div>
     <li class="nav-item">
       <nuxt-link :to="'/dashboard/newJav/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'plus-square']" />
-        <span>Add Video</span>
+        <font-awesome-icon :icon="['fas', 'box-open']" />
+        <span>Mis Paquetes</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
       <nuxt-link :to="'/dashboard/newIdol/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'plus-square']" />
-        <span>Add Idol</span>
+        <font-awesome-icon :icon="['fas', 'newspaper']" />
+        <span>Mis Articulos</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
       <nuxt-link :to="'/dashboard/newCategory/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'plus-square']" />
-        <span>Add Category</span>
+        <font-awesome-icon :icon="['fas', 'file-video']" />
+        <span>Mis Archivos</span>
       </nuxt-link>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider" />
     <!-- Heading -->
-    <div class="sidebar-heading">Data Center</div>
+    <div class="sidebar-heading">Reportes</div>
     <li class="nav-item">
       <nuxt-link :to="'/dashboard/editJavs/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'stream']" />
-        <span>List Videos</span>
-        <span>{{videos.length}}</span>
+        <font-awesome-icon :icon="['fas', 'chart-pie']" />
+        <span>Estadisticas</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
       <nuxt-link :to="'/dashboard/editIdols/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'stream']" />
-        <span>List Idols</span>
-        <span>{{idols.length}}</span>
-      </nuxt-link>
-    </li>
-    <li class="nav-item">
-      <nuxt-link :to="'/dashboard/editCategories/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'stream']" />
-        <span>List Categories</span>
-        <span>{{categories.length}}</span>
+        <font-awesome-icon :icon="['fas', 'flag']" />
+        <span>Denuncias</span>
       </nuxt-link>
     </li>
     <!-- Divider -->
@@ -81,9 +78,6 @@
 export default {
   name: "SidebarAdmin",
   props: {
-    videos: Array,
-    categories: Array,
-    idols: Array
   },
   data() {
     return {};
@@ -91,7 +85,6 @@ export default {
   methods: {
     async logout() {
       try {
-        await this.$store.dispatch("logout");
         this.$router.push({ path: "/" });
       } catch (e) {}
     }
