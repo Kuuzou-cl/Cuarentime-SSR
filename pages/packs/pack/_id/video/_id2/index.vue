@@ -21,6 +21,12 @@
           </div>
           <div class="need-space"></div>
           <div class="row">
+            <div class="col-lg-12 text-right">
+              <Rating :grade="3" :maxStars="5" :hasCounter="true" />
+            </div>
+          </div>
+          <div class="need-space"></div>
+          <div class="row">
             <div class="col-lg-12"></div>
           </div>
           <div class="need-space"></div>
@@ -81,6 +87,17 @@
               </div>
             </div>
           </div>
+          <div class="need-space"></div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Ingresa tu comentario sobre la clase</span>
+                </div>
+                <textarea class="form-control"></textarea>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="need-space"></div>
@@ -91,11 +108,13 @@
 import BannerCategorias from "~/components/BannerCategorias/BannerCategorias.vue";
 import VideoPlayer from "~/components/VideoPlayer/VideoPlayer.vue";
 import CardPack02 from "~/components/Card/CardPack02.vue";
+import Rating from "~/components/Rating/Rating.vue";
 export default {
   components: {
     BannerCategorias,
     VideoPlayer,
     CardPack02,
+    Rating,
   },
 };
 </script>

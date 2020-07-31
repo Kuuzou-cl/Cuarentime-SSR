@@ -8,19 +8,13 @@
         <div class="container-fluid">
           <div class="row">
             <div class="title-admin">
-              <h2>Inicio</h2>
+              <h2>Overview</h2>
             </div>
           </div>
         </div>
         <div class="need-space"></div>
         <div class="need-space"></div>
         <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-lg-12">
-              <h4>Ultimos Paquetes Aprobados</h4>
-            </div>
-          </div>
-          <div class="need-space"></div>
           <div class="row justify-content-center">
             <div class="col-lg-12">
               <table class="table">
@@ -51,65 +45,29 @@
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>Ejercicios de Yoga #1</td>
-                    <td>8</td>
+                    <td>Recetas en base a Pollo</td>
+                    <td>6</td>
                     <td>@JuanAdministrador</td>
                     <td>
-                      <button type="button" class="btn btn-warning" disabled>Salud</button>
+                      <button type="button" class="btn btn-warning" disabled>Cocina</button>
                     </td>
-                    <td>Julio 13, 2020</td>
+                    <td>Julio 5, 2020</td>
                     <td>
                       <button type="button" class="btn btn-info">Editar</button>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>¿Como generar masa muscular?</td>
-                    <td>4</td>
-                    <td>@JuanAdministrador</td>
-                    <td>
-                      <button type="button" class="btn btn-warning" disabled>Salud</button>
-                    </td>
-                    <td>Julio 15, 2020</td>
-                    <td>
-                      <button type="button" class="btn btn-info">Editar</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-lg-12">
-              <h4>Ultimas Ventas</h4>
-            </div>
-          </div>
-          <div class="need-space"></div>
-          <div class="row justify-content-center">
-            <div class="col-lg-12">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Paquete</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Categoría</th>
-                    <th scope="col">Publicación</th>
-                    <th scope="col">Comprador</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Julio 28, 2020</th>
                     <td>Recetas en base a Pollo</td>
-                    <td>2,600</td>
+                    <td>6</td>
+                    <td>@JuanAdministrador</td>
                     <td>
                       <button type="button" class="btn btn-warning" disabled>Cocina</button>
                     </td>
                     <td>Julio 5, 2020</td>
-                    <td>@CristobalComprador</td>
+                    <td>
+                      <button type="button" class="btn btn-info">Editar</button>
+                    </td>
                   </tr>
                 </tbody>
               </table>

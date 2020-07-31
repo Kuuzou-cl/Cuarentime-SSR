@@ -16,33 +16,33 @@
     <hr class="sidebar-divider" />
     <div class="sidebar-heading">Tu Perfil</div>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/uploadFile/'" class="nav-link">
+      <nuxt-link :to="'/dashboard/datos/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'id-badge']" />
         <span>Mis Datos</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/uploadFile/'" class="nav-link">
+      <nuxt-link :to="'/dashboard/ventas/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
-        <span>Mis Pagos</span>
+        <span>Mis Ventas</span>
       </nuxt-link>
     </li>
     <hr class="sidebar-divider" />
     <div class="sidebar-heading">Tu Contenido</div>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/newJav/'" class="nav-link">
+      <nuxt-link :to="'/dashboard/paquetes/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'box-open']" />
         <span>Mis Paquetes</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/newIdol/'" class="nav-link">
+      <nuxt-link :to="'/dashboard/articulos/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'newspaper']" />
         <span>Mis Articulos</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/newCategory/'" class="nav-link">
+      <nuxt-link :to="'/dashboard/archivos/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'file-video']" />
         <span>Mis Archivos</span>
       </nuxt-link>
@@ -52,13 +52,13 @@
     <!-- Heading -->
     <div class="sidebar-heading">Reportes</div>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/editJavs/'" class="nav-link">
+      <nuxt-link :to="'/dashboard/estadisticas/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'chart-pie']" />
         <span>Estadisticas</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/editIdols/'" class="nav-link">
+      <nuxt-link :to="'/dashboard/denuncias/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'flag']" />
         <span>Denuncias</span>
       </nuxt-link>
