@@ -1,11 +1,11 @@
 <template>
-  <nuxt-link :to="'/packs/pack/01'" tag="div" class="card card-pack">
+  <nuxt-link :to="'/packs/pack/'+id" tag="div" class="card card-pack">
     <div class="card-body">
       <div class="row">
         <div class="col-lg-6">
           <div class="img-pack">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8qkrLdNBuWHrnjuqJmFWZCeIwWaog33E_YQ&usqp=CAU"
+              :src="imagen"
               alt
             />
             <div class="img-pack-details"></div>
@@ -16,11 +16,11 @@
                 </div>
                 <div class="col-lg-2 text-center">
                   <div style="padding-top: 100%;">
-                    <p>2,400</p>
+                    <p>{{precio}}</p>
                   </div>
                 </div>
                 <div class="col-lg-7 text-center">
-                  <h6>Recetas en base a Pollo</h6>
+                  <h6>{{titulo}}</h6>
                   <p>Por Jaime Sepulveda</p>
                 </div>
               </div>
@@ -28,10 +28,10 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <h5 class="card-text text-center">Recetas en base a Pollo</h5>
+          <h5 class="card-text text-center">{{titulo}}</h5>
           <p
             class="card-text text-center"
-          >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          >{{resumen}}</p>
         </div>
       </div>
     </div>
@@ -39,7 +39,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    id: String,
+    titulo: String,
+    resumen: String,
+    precio: String,
+    imagen: String,
+  },
+};
 </script>
 
 <style lang="scss">

@@ -66,6 +66,15 @@
         <div class="log-navbar">
           <div class="row width-fix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+              <Login />
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+              <SignUp />
+            </div>
+            <div
+              v-if="$store.state.token"
+              class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"
+            >
               <nuxt-link to="/dashboard" tag="div" class="account">
                 <img
                   src="https://mk0trickyphotos51tq5.kinstacdn.com/wp-content/uploads/2017/08/final-1.png"
@@ -80,12 +89,18 @@
 </template>
 
 <script>
+import Login from "~/components/LoginModal/Login";
+import SignUp from "~/components/LoginModal/SignUp";
 export default {
   name: "Navbar",
   data() {
     return {
       query: "",
     };
+  },
+  components: {
+    Login,
+    SignUp,
   },
   methods: {
     search() {},

@@ -1,5 +1,7 @@
 <template>
   <div>
+    {{this.paquete.titulo}}
+    {{this.comprado}}
     <div v-if="!comprado" class="container-fluid">
       <div class="need-space"></div>
       <div class="need-space"></div>
@@ -15,13 +17,13 @@
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-lg-12 text-center">
-                  <h4>Recetas en base a Pollo</h4>
+                  <h4>{{this.paquete.titulo}}</h4>
                 </div>
               </div>
               <div class="need-space"></div>
               <div class="row">
                 <div class="col-lg-12 text-center">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <p>{{this.paquete.resumen}}</p>
                 </div>
               </div>
               <div class="row">
@@ -227,8 +229,32 @@ export default {
       ],
     };
   },
-  async asyncData({ params }) {
-    return {};
+  async asyncData({ app, params, store }) {
+    let id = params.id;
+    if (id == null || id == "") {
+      id = "";
+    }
+    let paquete = {};
+    let comprado = false;
+    var paqueteData = await app.$fireStore.collection("paquetes").doc(params.id);
+    await paqueteData.get().then((doc) => {
+      paquete.titulo = doc.data().titulo;
+      paquete.resumen = doc.data().resumen;
+      paquete.previsualizacion = doc.data().previsualizacion;
+      paquete.precio = doc.data().precio;
+      paquete.user = doc.data().user;
+      if (!store.getters.getToken) {
+        comprado = false;
+      }else{
+        if (doc.data().user == store.getters.getToken) {
+          comprado = true;
+        }
+      }
+    });
+    return {
+      paquete: paquete,
+      comprado: comprado
+    };
   },
   beforeCreate() {},
   methods: {

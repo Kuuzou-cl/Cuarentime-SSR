@@ -49,12 +49,29 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: 'AIzaSyDRSGXVXKWJZU9Y5pSeTcjs9XrHOoguMVY',
+          authDomain: 'cuarentime-b5a8c.firebaseapp.com',
+          databaseURL: 'https://cuarentime-b5a8c.firebaseio.com',
+          projectId: 'cuarentime-b5a8c',
+          storageBucket: 'cuarentime-b5a8c.appspot.com',
+          messagingSenderId: '238791426857',
+          appId: '1:238791426857:web:32526edc8b7f65258b6d38"',
+        },
+        services: {
+          auth: true,
+          firestore: true,
+        }
+      }
+    ],
     ['nuxt-lazy-load', {
       directiveOnly: true,
       observerConfig: {
         threshold: 0.3
       }
-
     }],
     '@nuxtjs/device',
     /* 

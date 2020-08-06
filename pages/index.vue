@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="need-space"></div>
       <div class="need-space"></div>
-      <BannerCategorias />
+      <BannerCategorias v-bind:categorias="categorias"/>
       <div class="need-space"></div>
       <div class="need-space"></div>
       <div class="container-fluid">
@@ -16,8 +16,18 @@
                 </div>
               </div>
               <div class="need-space"></div>
-              <div class="row justify-content-center">
-                <CardPack />
+              <div
+                v-for="(paquete,index) in paquetes"
+                :key="index"
+                class="row justify-content-center"
+              >
+                <CardPack
+                  v-bind:id="paquete.id"
+                  v-bind:titulo="paquete.titulo"
+                  v-bind:resumen="paquete.resumen"
+                  v-bind:precio="paquete.precio"
+                  v-bind:imagen="paquete.imagen"
+                />
               </div>
             </div>
           </div>
@@ -62,8 +72,43 @@ export default {
       ],
     };
   },
-  async asyncData() {
-    return {};
+  async asyncData({ app }) {
+    let paquetes;
+    let categorias;
+    await app.$fireStore
+      .collection("paquetes")
+      .get()
+      .then((querySnapshot) => {
+        const paquetesReferencia = [];
+        querySnapshot.forEach((doc) => {
+          let paqueteReferencia = {};
+          paqueteReferencia.id = doc.id;
+          paqueteReferencia.imagen = doc.data().imagen;
+          paqueteReferencia.precio = doc.data().precio;
+          paqueteReferencia.titulo = doc.data().titulo;
+          paqueteReferencia.resumen = doc.data().resumen;
+          paquetesReferencia.push(paqueteReferencia);
+        });
+        paquetes = paquetesReferencia;
+      });
+    await app.$fireStore
+      .collection("categorias")
+      .get()
+      .then((querySnapshot) => {
+        const categoriasReferencia = [];
+        querySnapshot.forEach((doc) => {
+          let categoriaReferencia = {};
+          categoriaReferencia.id = doc.id;
+          categoriaReferencia.nombre = doc.data().nombre;
+          categoriaReferencia.imagen = doc.data().imagen;
+          categoriasReferencia.push(categoriaReferencia);
+        });
+        categorias = categoriasReferencia;
+      });
+    return {
+      paquetes: paquetes.slice(0, 5),
+      categorias: categorias.slice(0, 6),
+    };
   },
   beforeCreate() {},
 };

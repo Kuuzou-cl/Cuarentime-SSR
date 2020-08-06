@@ -1,4 +1,4 @@
 // Include bootstrap JS only 
-if (process.BROWSER_BUILD) {
+if (process.browser) {
     require('bootstrap')
   }

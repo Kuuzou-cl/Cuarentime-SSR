@@ -23,7 +23,8 @@
                 margin-left: 0;
             }
             &.active {
-                color: #ffe100;
+                color: #ffe100 !important;
+                background-color: #fff !important;
             }
         }
     }
