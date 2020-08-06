@@ -119,8 +119,7 @@ export default {
     CardPack02,
   },
   data() {
-    return {
-    };
+    return {};
   },
   head() {
     return {
@@ -146,17 +145,10 @@ export default {
     await store.dispatch("getPaquete", { id: id }).then((paq) => {
       paquete = paq;
     });
-    let auth = true;
-    if (paquete.usuario == store.state.token) {
-      auth = false;
-    }
-    if (store.state.paquetesComprados.some(item => item == id)) {
-      auth = false;
-    }    
     return {
+      id: id,
       categorias: categorias,
       paquete: paquete,
-      auth: auth,
       comentarios: paquete.comentarios,
     };
   },
@@ -170,7 +162,18 @@ export default {
       }
     },
   },
-  computed: {},
+  computed: {
+    auth() {
+      let auth = true;
+      if (this.paquete.usuario == this.$store.state.token) {
+        auth = false;
+      }
+      if (this.$store.state.paquetesComprados.some((item) => item == this.id)) {
+        auth = false;
+      }
+      return auth;
+    },
+  },
 };
 </script>
 

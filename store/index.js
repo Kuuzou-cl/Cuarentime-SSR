@@ -184,5 +184,58 @@ export const actions = {
     } catch (error) {
       console.log(error)
     }
+  },
+  async getMisPaquetes({ state }) {    
+    try {
+      let paquetes = [];
+      await this.$fireStore
+        .collection("paquetes").where("usuario", "==", state.token)
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            let paquete = {};
+            paquete.titulo = doc.data().titulo;
+            paquete.resumen = doc.data().resumen;
+            paquete.previsualizacion = doc.data().previsualizacion;
+            paquete.precio = doc.data().precio;
+            paquete.usuario = doc.data().usuario;
+            paquete.videos = doc.data().videos;
+            paquete.comentarios = doc.data().comentarios;
+            paquete.categoria = doc.data().categoria;
+            paquete.aprobado = doc.data().aprobado;
+            paquete.imagen = doc.data().imagen;
+            paquete.publicacion = doc.data().publicacion;
+            paquete.publicado = doc.data().publicado;
+            paquetes.push(paquete);
+          });
+        });
+      return paquetes;
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  async getMisArticulos() {
+    let articulos;
+    try {
+      await this.$fireStore
+        .collection("articulos")
+        .get()
+        .then((querySnapshot) => {
+          const articulosReferencia = [];
+          querySnapshot.forEach((doc) => {
+            let articuloReferencia = {};
+            articuloReferencia.id = doc.id;
+            articuloReferencia.contenido = doc.data().contenido;
+            articuloReferencia.duracion = doc.data().duracion;
+            articuloReferencia.titulo = doc.data().titulo;
+            articuloReferencia.usuario = doc.data().usuario;
+            articulosReferencia.push(articuloReferencia);
+          });
+          articulos = articulosReferencia;
+        });
+      return articulos;
+    } catch (error) {
+      console.log(error)
+    }
   }
 }

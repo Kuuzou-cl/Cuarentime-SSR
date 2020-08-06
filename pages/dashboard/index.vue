@@ -29,6 +29,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Videos</th>
+                    <th scope="col">Comentarios</th>
                     <th scope="col">Aprobado por</th>
                     <th scope="col">Categoría</th>
                     <th scope="col">Publicación</th>
@@ -36,41 +37,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr v-for="(paquete,index) in paquetes" :key="index">
                     <th scope="row">1</th>
-                    <td>Recetas en base a Pollo</td>
-                    <td>6</td>
-                    <td>@JuanAdministrador</td>
+                    <td>{{paquete.titulo}}</td>
+                    <td>{{paquete.videos.length}}</td>
+                    <td>{{paquete.comentarios.length}}</td>
+                    <td>{{paquete.aprobado}}</td>
                     <td>
                       <button type="button" class="btn btn-warning" disabled>Cocina</button>
                     </td>
-                    <td>Julio 5, 2020</td>
-                    <td>
-                      <button type="button" class="btn btn-info">Editar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Ejercicios de Yoga #1</td>
-                    <td>8</td>
-                    <td>@JuanAdministrador</td>
-                    <td>
-                      <button type="button" class="btn btn-warning" disabled>Salud</button>
-                    </td>
-                    <td>Julio 13, 2020</td>
-                    <td>
-                      <button type="button" class="btn btn-info">Editar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>¿Como generar masa muscular?</td>
-                    <td>4</td>
-                    <td>@JuanAdministrador</td>
-                    <td>
-                      <button type="button" class="btn btn-warning" disabled>Salud</button>
-                    </td>
-                    <td>Julio 15, 2020</td>
+                    <td>{{paquete.publicacion}}</td>
                     <td>
                       <button type="button" class="btn btn-info">Editar</button>
                     </td>
@@ -132,10 +108,18 @@ export default {
   components: {
     SidebarAdmin,
   },
-  async asyncData() {
-    return {};
+  async asyncData({ store }) {
+    let paquetes;
+    await store.dispatch("getMisPaquetes").then((paq) => {
+      paquetes = paq;
+    });
+    return {
+      paquetes: paquetes,
+    };
   },
-  methods: {},
+  methods: {
+  },
+  computed: {},
 };
 </script>
 
