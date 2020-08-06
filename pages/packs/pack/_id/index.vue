@@ -1,11 +1,9 @@
 <template>
   <div>
-    {{this.paquete.titulo}}
-    {{this.comprado}}
-    <div v-if="!comprado" class="container-fluid">
-      <div class="need-space"></div>
-      <div class="need-space"></div>
-      <BannerCategorias />
+    <div class="need-space"></div>
+    <div class="need-space"></div>
+    <BannerCategorias v-bind:categorias="categorias" />
+    <div class="container-fluid">
       <div class="need-space"></div>
       <div class="need-space"></div>
       <div class="container">
@@ -26,11 +24,8 @@
                   <p>{{this.paquete.resumen}}</p>
                 </div>
               </div>
-              <div class="row">
+              <div v-if="auth" class="row">
                 <div class="col-lg-12">
-                  <button class="btn btn-info float-left" @click="comprar">
-                    <font-awesome-icon :icon="['fas', 'eye']" />
-                  </button>
                   <button class="btn btn-info float-right">
                     Agregar al Carro
                     <font-awesome-icon :icon="['fas', 'shopping-basket']" />
@@ -40,130 +35,40 @@
             </div>
           </div>
           <div class="need-space"></div>
-          <div class="row">
+          <div class="row" v-if="auth">
             <div class="col-lg-6">
               <CardPack02 />
             </div>
             <div class="col-lg-6">
-              <div class="comentario-paquete">
+              <div
+                v-for="(comentario,index) in comentarios"
+                :key="index"
+                class="comentario-paquete"
+              >
                 <div class="row">
                   <div class="col-lg-4">
-                    <h6>Manuel Palma</h6>
+                    <h6>{{comentario.usuario}}</h6>
                   </div>
                   <div class="col-lg-8 text-center">
-                    <p>Buen video men, +10 y a favoritos!</p>
-                  </div>
-                </div>
-              </div>
-              <div class="comentario-paquete">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h6>Diego Aguero</h6>
-                  </div>
-                  <div class="col-lg-8 text-center">
-                    <p>Muy rico, recomendable y facil de hacer</p>
-                  </div>
-                </div>
-              </div>
-              <div class="comentario-paquete">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h6>Cristobal Carrion</h6>
-                  </div>
-                  <div class="col-lg-8 text-center">
-                    <p>Un poco caro, pero buenas recetas</p>
-                  </div>
-                </div>
-              </div>
-              <div class="comentario-paquete">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h6>Pablo Soto</h6>
-                  </div>
-                  <div class="col-lg-8 text-center">
-                    <p>Un poco caro, pero buenas recetas</p>
+                    <p>{{comentario.comentario}}</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="need-space"></div>
-    </div>
-    <div v-if="comprado" class="container-fluid">
-      <div class="need-space"></div>
-      <div class="need-space"></div>
-      <BannerCategorias />
-      <div class="need-space"></div>
-      <div class="need-space"></div>
-      <div class="container">
-        <div class="card-pack-default">
-          <div class="row">
+          <div class="row" v-if="!auth">
             <div class="col-lg-6">
-              <VideoPlayer />
-            </div>
-            <div class="col-lg-6">
-              <div class="row">
-                <div class="col-lg-12 text-center">
-                  <h4>Recetas en base a Pollo</h4>
-                </div>
-              </div>
-              <div class="need-space"></div>
-              <div class="row">
-                <div class="col-lg-12 text-center">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <button class="btn btn-info float-left" @click="comprar">
-                    <font-awesome-icon :icon="['fas', 'eye']" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="need-space"></div>
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="comentario-paquete">
+              <div
+                v-for="(comentario,index) in comentarios"
+                :key="index"
+                class="comentario-paquete"
+              >
                 <div class="row">
                   <div class="col-lg-4">
-                    <h6>Manuel Palma</h6>
+                    <h6>{{comentario.usuario}}</h6>
                   </div>
                   <div class="col-lg-8 text-center">
-                    <p>Buen video men, +10 y a favoritos!</p>
-                  </div>
-                </div>
-              </div>
-              <div class="comentario-paquete">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h6>Diego Aguero</h6>
-                  </div>
-                  <div class="col-lg-8 text-center">
-                    <p>Muy rico, recomendable y facil de hacer</p>
-                  </div>
-                </div>
-              </div>
-              <div class="comentario-paquete">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h6>Cristobal Carrion</h6>
-                  </div>
-                  <div class="col-lg-8 text-center">
-                    <p>Un poco caro, pero buenas recetas</p>
-                  </div>
-                </div>
-              </div>
-              <div class="comentario-paquete">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h6>Pablo Soto</h6>
-                  </div>
-                  <div class="col-lg-8 text-center">
-                    <p>Un poco caro, pero buenas recetas</p>
+                    <p>{{comentario.comentario}}</p>
                   </div>
                 </div>
               </div>
@@ -215,7 +120,6 @@ export default {
   },
   data() {
     return {
-      comprado: false,
     };
   },
   head() {
@@ -229,31 +133,31 @@ export default {
       ],
     };
   },
-  async asyncData({ app, params, store }) {
+  async asyncData({ params, store }) {
+    let categorias;
+    await store.dispatch("getCategorias").then((cat) => {
+      categorias = cat;
+    });
     let id = params.id;
     if (id == null || id == "") {
       id = "";
     }
-    let paquete = {};
-    let comprado = false;
-    var paqueteData = await app.$fireStore.collection("paquetes").doc(params.id);
-    await paqueteData.get().then((doc) => {
-      paquete.titulo = doc.data().titulo;
-      paquete.resumen = doc.data().resumen;
-      paquete.previsualizacion = doc.data().previsualizacion;
-      paquete.precio = doc.data().precio;
-      paquete.user = doc.data().user;
-      if (!store.getters.getToken) {
-        comprado = false;
-      }else{
-        if (doc.data().user == store.getters.getToken) {
-          comprado = true;
-        }
-      }
+    let paquete;
+    await store.dispatch("getPaquete", { id: id }).then((paq) => {
+      paquete = paq;
     });
+    let auth = true;
+    if (paquete.usuario == store.state.token) {
+      auth = false;
+    }
+    if (store.state.paquetesComprados.some(item => item == id)) {
+      auth = false;
+    }    
     return {
+      categorias: categorias,
       paquete: paquete,
-      comprado: comprado
+      auth: auth,
+      comentarios: paquete.comentarios,
     };
   },
   beforeCreate() {},

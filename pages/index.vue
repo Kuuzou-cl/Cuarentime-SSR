@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="need-space"></div>
       <div class="need-space"></div>
-      <BannerCategorias v-bind:categorias="categorias"/>
+      <BannerCategorias v-bind:categorias="categorias" />
       <div class="need-space"></div>
       <div class="need-space"></div>
       <div class="container-fluid">
@@ -72,39 +72,15 @@ export default {
       ],
     };
   },
-  async asyncData({ app }) {
+  async asyncData({ store }) {
     let paquetes;
+    await store.dispatch("getPaquetes").then((paq) => {
+      paquetes = paq;
+    });
     let categorias;
-    await app.$fireStore
-      .collection("paquetes")
-      .get()
-      .then((querySnapshot) => {
-        const paquetesReferencia = [];
-        querySnapshot.forEach((doc) => {
-          let paqueteReferencia = {};
-          paqueteReferencia.id = doc.id;
-          paqueteReferencia.imagen = doc.data().imagen;
-          paqueteReferencia.precio = doc.data().precio;
-          paqueteReferencia.titulo = doc.data().titulo;
-          paqueteReferencia.resumen = doc.data().resumen;
-          paquetesReferencia.push(paqueteReferencia);
-        });
-        paquetes = paquetesReferencia;
-      });
-    await app.$fireStore
-      .collection("categorias")
-      .get()
-      .then((querySnapshot) => {
-        const categoriasReferencia = [];
-        querySnapshot.forEach((doc) => {
-          let categoriaReferencia = {};
-          categoriaReferencia.id = doc.id;
-          categoriaReferencia.nombre = doc.data().nombre;
-          categoriaReferencia.imagen = doc.data().imagen;
-          categoriasReferencia.push(categoriaReferencia);
-        });
-        categorias = categoriasReferencia;
-      });
+    await store.dispatch("getCategorias").then((cat) => {
+      categorias = cat;
+    });
     return {
       paquetes: paquetes.slice(0, 5),
       categorias: categorias.slice(0, 6),
