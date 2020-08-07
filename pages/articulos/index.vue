@@ -24,51 +24,14 @@
       <div class="need-space"></div>
       <div class="container-fluid">
         <div class="row content-center">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <div v-for="(articulo, index) in articulos"
+          :key="index" 
+          class="col-lg-6 col-md-4 col-sm-4 col-xs-4">
             <div class="col-post">
               <div class="need-space"></div>
               <div class="row justify-content-center">
-                <CardArticulos />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div class="col-post">
-              <div class="need-space"></div>
-              <div class="row justify-content-center">
-                <CardArticulos />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div class="col-post">
-              <div class="need-space"></div>
-              <div class="row justify-content-center">
-                <CardArticulos />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div class="col-post">
-              <div class="need-space"></div>
-              <div class="row justify-content-center">
-                <CardArticulos />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div class="col-post">
-              <div class="need-space"></div>
-              <div class="row justify-content-center">
-                <CardArticulos />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div class="col-post">
-              <div class="need-space"></div>
-              <div class="row justify-content-center">
-                <CardArticulos />
+                <CardArticulos
+                v-bind:articulo="articulo"/>
               </div>
             </div>
           </div>
@@ -85,6 +48,14 @@ export default {
   layout: (ctx) => (ctx.isMobile ? "mobile" : "default"),
   components: {
     CardArticulos,
+  },
+
+  async asyncData({ store }) {
+    let articulos;
+    await store.dispatch("getArticulos").then((paq) => {
+      articulos = paq;
+    });
+    return { articulos: articulos };
   },
 
   beforeCreate() {},
