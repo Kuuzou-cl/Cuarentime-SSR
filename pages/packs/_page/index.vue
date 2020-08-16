@@ -2,29 +2,37 @@
   <div>
     <div class="container-fluid">
       <div class="need-space"></div>
-      <div class="input-group">
-        <input
-          @keyup.enter="search"
-          v-model="query"
-          name="query"
-          type="text"
-          class="form-control-articulo"
-          placeholder="Buscar paquete"
-        />
-        <div class="input-group-append">
-          <span class="input-group-text">
-            <font-awesome-icon
-              :icon="['fas', 'search']"
-              @click="search"
-              class="icon-search-navbar"
-            />
-          </span>
+      <div class="search-post">
+          <div class="row width-fix">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
+              <div class="row justify-content-center">
+                <div class="input-group">
+                  <input
+                    @keyup.enter="search"
+                    v-model="query"
+                    name="query"
+                    type="text"
+                    class="form-control"
+                    placeholder="Busca articulo"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <font-awesome-icon
+                        :icon="['fas', 'search']"
+                        @click="search"
+                        class="icon-search-navbar"
+                      />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>      
       <div class="need-space"></div>
       <div class="container-fluid">        
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <h3>Listado de Paquetes</h3> 
-            <div class="col-post">
+            <div class="col-miniPost">
               <div class="head-col">                               
               </div>
               <div class="need-space"></div>

@@ -31,7 +31,7 @@
           <h6>descripción:</h6>
           <p
             class="card-text text-center"
-          >{{articulo.contenido}}</p>
+          >{{limitadorCaracter()}}</p>
         </div>
       </div>
     </div>
@@ -42,7 +42,12 @@
 export default {
   props:{
     articulo: Object,
-  }
+  },
+  methods: {
+    limitadorCaracter(){
+      return this.articulo.contenido.substring(0,500) + "..."
+    },
+  },
 };
 </script>
 

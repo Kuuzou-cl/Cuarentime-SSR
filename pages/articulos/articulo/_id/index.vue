@@ -7,8 +7,8 @@
         <div class="row content-center">
           <div v-for="(articulo, index) in articulos"
           :key="index" 
-          class="col-lg-10 col-md-4 col-sm-4 col-xs-4">
-            <div class="col-post">
+          class="col-lg-11 col-md-9 col-sm-9 col-xs-9">
+            <div class="col-articulo justify-content-center">
               <div class="need-space"></div>
               <div class="row justify-content-center">
                 <CardArticulos

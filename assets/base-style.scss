@@ -472,3 +472,123 @@ body
 .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
   background: #E8175D !important;
 }
+
+
+
+.col-miniPost{
+  height: 45vh;
+  color: #ffffff;
+  border: 1px solid;
+  border-color: #4090AA;
+  .head-col{
+    background-color: #4090AA;
+    h3{
+      padding-top: 2%;
+      padding-bottom: 1%;
+      letter-spacing: 3px;
+    }
+  }  
+
+  .card-pack{
+    width: 80%;
+    height: 240px;
+    border-color: #4090AA;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    color: #444444;
+    .img-pack{
+      width: 100%;
+      position: relative;
+      z-index: 0;
+      img{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+      }
+      .img-pack-details{
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 80px;
+        opacity: 0.7;
+        top: 110px;
+        background-color: #35BEE0;
+      }
+      .img-pack-info{
+        color: #ffffff;
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        height: 80px;
+        top: 110px;
+        h6{
+          font-size: 16px;
+          letter-spacing: 2px;
+          padding-top: 8px;
+        }
+        p{
+          font-size: 12px;
+        }
+        img{
+          height: 80px;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .card-articulo{
+    width: 80%;
+    height: 240px;
+    border: 0px;    
+    color: #444444;
+    .card-articulo-title{
+      width: 100%;
+      padding: 2% 1%;
+      background-color: #f1f1f1;
+      color: #000000;
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    }
+    img{
+      height: 150px;
+    }
+  }
+}
+
+.col-articulo{
+  
+  height: 85vh;
+  color: #ffffff;
+  border: 1px solid;
+  border-color: #4090AA;
+  .head-col{
+    background-color: #4090AA;
+    h3{
+      padding-top: 2%;
+      padding-bottom: 1%;
+      letter-spacing: 3px;
+    }
+  }  
+  .card-articulo{
+    width: 80%;
+    height: 240px;
+    border: 0px;    
+    color: #444444;
+    .card-articulo-title{
+      width: 100%;
+      padding: 2% 1%;
+      background-color: #f1f1f1;
+      color: #000000;
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    }
+    img{
+      height: 350px;
+    }
+  }
+}
