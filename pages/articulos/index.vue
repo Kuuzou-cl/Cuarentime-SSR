@@ -13,7 +13,7 @@
                     name="query"
                     type="text"
                     class="form-control"
-                    placeholder="Busca articulo"
+                    placeholder="Buscar Articulo"
                   />
                   <div class="input-group-append">
                     <span class="input-group-text">
@@ -35,6 +35,11 @@
           <div v-for="(articulo, index) in articulos"
           :key="index" 
           class="col-lg-6 col-md-2 col-sm-4 col-xs-4">
+          <div class="need-space"></div>
+          <h3>Listado de articulos</h3>
+          <hr width=203% align="center">
+          <div class="need-space"></div>
+
             <div class="col-miniPost">
               <div class="need-space"></div>
               <div class="row justify-content-center">
