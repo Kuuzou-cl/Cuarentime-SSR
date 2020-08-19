@@ -237,5 +237,16 @@ export const actions = {
     } catch (error) {
       console.log(error)
     }
+  },
+  async getVideos({ commit }, { file }){
+    try {
+      var storageRef = this.$fireStorage.ref();
+      var fileRef = storageRef.child('videos/'+file[0].name);
+      fileRef.put(file[0]).then((snapshot) =>{
+        console.log("uploaded")
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 }

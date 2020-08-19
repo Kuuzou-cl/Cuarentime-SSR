@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 module.exports = {
-  mode: 'universal',
+  mode: 'Universal',
   /*
   ** Headers of the page
   */
@@ -64,6 +64,7 @@ module.exports = {
         services: {
           auth: true,
           firestore: true,
+          storage: true,
         }
       }
     ],
