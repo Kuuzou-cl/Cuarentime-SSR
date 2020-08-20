@@ -28,7 +28,7 @@
           />
         </div>
         <div class="col-lg-8">
-          <h6>descripción:</h6>
+          <h6>Resumen:</h6>
           <p
             class="card-text text-center"
           >{{limitadorCaracter()}}</p>

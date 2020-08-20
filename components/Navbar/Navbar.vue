@@ -13,7 +13,9 @@
     </button>
     <div class="container">
       <div class="navbar-collapse main-navbar">
-        <nuxt-link :to="'/'" class="heart" tag="div" type="button">Cuarentime</nuxt-link>
+        <nuxt-link :to="'/'" class="heart" tag="div" type="button">
+          Cuarentime
+        </nuxt-link>
         <div class="search-navbar">
           <div class="row width-fix">
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-center">

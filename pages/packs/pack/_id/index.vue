@@ -1,8 +1,7 @@
 <template>
   <div>
     <div class="need-space"></div>
-    <div class="need-space"></div>
-    <BannerCategorias v-bind:categorias="categorias" />
+    <!-- <BannerCategorias v-bind:categorias="categorias" /> -->
     <div class="container-fluid">
       <div class="need-space"></div>
       <div class="need-space"></div>
@@ -99,6 +98,10 @@
             </div>
           </div>
         </div>
+        <div class="need-space"></div>
+      <div class="need-space"></div>
+      <div class="need-space"></div>
+      <div class="need-space"></div>
       </div>
       <div class="need-space"></div>
     </div>

@@ -13,7 +13,7 @@
                     name="query"
                     type="text"
                     class="form-control"
-                    placeholder="Busca articulo"
+                    placeholder="Buscar Paquete"
                   />
                   <div class="input-group-append">
                     <span class="input-group-text">
@@ -31,8 +31,15 @@
       </div>      
       <div class="need-space"></div>
       <div class="container-fluid">        
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <h3>Listado de Paquetes</h3> 
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> 
+            <div class="need-space"></div>
+            <h3>Listado de Paquetes</h3>
+            <hr width=203% align="center">
+            <div class="need-space"></div> 
             <div class="col-miniPost">
+              <div class="need-space"></div>
+              <div class="need-space"></div>
+              <div class="need-space"></div>
               <div class="head-col">                               
               </div>
               <div class="need-space"></div>
@@ -53,19 +60,22 @@
             </div>
           </div>         
       </div>
+      <div class="need-space"></div>
+      <div class="need-space"></div>
+      <div class="need-space"></div>
+      <div class="need-space"></div>
+      <div class="need-space"></div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import BannerCategorias from "~/components/BannerCategorias/BannerCategorias.vue";
 import CardPack from "~/components/Card/CardPack.vue";
 import CardArticulo from "~/components/Card/CardArticulo.vue";
 export default {
   layout: (ctx) => (ctx.isMobile ? "mobile" : "default"),
   components: {
-    BannerCategorias,
     CardPack,
     CardArticulo,
   },
@@ -84,13 +94,8 @@ export default {
     await store.dispatch("getPaquetes").then((paq) => {
       paquetes = paq;
     });
-    let categorias;
-    await store.dispatch("getCategorias").then((cat) => {
-      categorias = cat;
-    });
     return {
       paquetes: paquetes.slice(0, 5),
-      categorias: categorias.slice(0, 6),
     };
   },
   beforeCreate() {},
