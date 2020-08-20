@@ -32,6 +32,26 @@
     <li class="nav-item">
       <nuxt-link :to="'/dashboard/paquetes/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'box-open']" />
+        <span>Nuevo Paquete</span>
+      </nuxt-link>
+    </li>
+    <li class="nav-item">
+      <nuxt-link :to="'/dashboard/articulos/'" class="nav-link">
+        <font-awesome-icon :icon="['fas', 'newspaper']" />
+        <span>Nuevo Video</span>
+      </nuxt-link>
+    </li>
+    <li class="nav-item">
+      <nuxt-link :to="'/dashboard/archivos/'" class="nav-link">
+        <font-awesome-icon :icon="['fas', 'file-video']" />
+        <span>Subir Archivos</span>
+      </nuxt-link>
+    </li>
+    <hr class="sidebar-divider" />
+    <div class="sidebar-heading">Tu Contenido</div>
+    <li class="nav-item">
+      <nuxt-link :to="'/dashboard/paquetes/'" class="nav-link">
+        <font-awesome-icon :icon="['fas', 'box-open']" />
         <span>Mis Paquetes</span>
       </nuxt-link>
     </li>
@@ -39,12 +59,6 @@
       <nuxt-link :to="'/dashboard/articulos/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'newspaper']" />
         <span>Mis Articulos</span>
-      </nuxt-link>
-    </li>
-    <li class="nav-item">
-      <nuxt-link :to="'/dashboard/archivos/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'file-video']" />
-        <span>Mis Archivos</span>
       </nuxt-link>
     </li>
     <!-- Divider -->
@@ -77,8 +91,7 @@
 <script>
 export default {
   name: "SidebarAdmin",
-  props: {
-  },
+  props: {},
   data() {
     return {};
   },
@@ -87,8 +100,8 @@ export default {
       try {
         this.$router.push({ path: "/" });
       } catch (e) {}
-    }
-  }
+    },
+  },
 };
 </script>
 
