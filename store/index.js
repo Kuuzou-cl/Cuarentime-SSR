@@ -185,7 +185,7 @@ export const actions = {
       console.log(error)
     }
   },
-  async getMisPaquetes({ state }) {    
+  async getMisPaquetes({ state }) {
     try {
       let paquetes = [];
       await this.$fireStore
@@ -238,13 +238,31 @@ export const actions = {
       console.log(error)
     }
   },
-  async getVideos({ commit }, { file }){
+  async uploadFiles({ commit }, { file }) {
     try {
       var storageRef = this.$fireStorage.ref();
-      var fileRef = storageRef.child('videos/'+file[0].name);
-      fileRef.put(file[0]).then((snapshot) =>{
+      var fileRef = storageRef.child('videos/' + file[0].name);
+      fileRef.put(file[0]).then((snapshot) => {
         console.log("uploaded")
       })
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  async getVideo({ commit }, { id }) {
+    let video = {};
+    try {
+      var videoData = await this.$fireStore
+        .collection("videos")
+        .doc(id);
+      await videoData.get().then((doc) => {
+        console.log(doc.data())
+        video.titulo = doc.data().titulo;
+        video.video = doc.data().video;
+        video.descripcion = doc.data().descripcion;
+        video.duracion = doc.data().duracion;
+      });
+      return video;
     } catch (error) {
       console.log(error)
     }

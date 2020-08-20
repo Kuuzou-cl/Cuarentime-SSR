@@ -89,7 +89,7 @@
                     <td>Pollo Arvejado</td>
                     <td>10 min</td>
                     <td>
-                      <nuxt-link :to="'/packs/pack/01/video/01'" tag="button" class="btn btn-info">
+                      <nuxt-link :to="'/packs/pack/01/video/ddM3EM6wb4ri3WW1LJcv'" tag="button" class="btn btn-info">
                         <font-awesome-icon :icon="['fas', 'play']" />
                       </nuxt-link>
                     </td>

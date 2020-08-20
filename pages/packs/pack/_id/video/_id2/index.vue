@@ -15,8 +15,10 @@
           </div>
           <div class="need-space"></div>
           <div class="row">
+          </div>
+          <div class="row">
             <div class="col-lg-12">
-              <VideoPlayer />
+              <VideoPlayer v-bind:video="video.video" />
             </div>
           </div>
           <div class="need-space"></div>
@@ -116,6 +118,22 @@ export default {
     CardPack02,
     Rating,
   },
+  async asyncData({ params, store }) {
+    let id = params.id2;
+    if (id == null || id == "") {
+      id = "";
+    }
+    console.log(id)
+    let video;
+    await store.dispatch("getVideo", { id: id }).then((res) => {
+      video = res;
+      console.log(res)
+    });
+    return {
+      id: id,
+      video: video
+    };
+  }
 };
 </script>
 <style lang="scss">

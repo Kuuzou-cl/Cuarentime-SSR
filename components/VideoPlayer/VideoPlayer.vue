@@ -1,7 +1,7 @@
 <template>
   <vue-plyr>
     <video controls crossorigin playsinline>
-      <source src="https://www.youtube.com/watch?v=G-7U-FDql1A" type="video/mp4" />
+      <source :src="video" type="video/mp4" />
     </video>
   </vue-plyr>
 </template>
@@ -10,6 +10,7 @@
 export default {
   name: "VideoPlayer",
   props: {
+    video: String,
   },
   data() {
     return {
