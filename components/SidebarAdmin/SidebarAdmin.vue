@@ -30,13 +30,13 @@
     <hr class="sidebar-divider" />
     <div class="sidebar-heading">Tu Contenido</div>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/paquetes/'" class="nav-link">
+      <nuxt-link :to="'/dashboard/nuevoPaquete/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'box-open']" />
         <span>Nuevo Paquete</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/articulos/'" class="nav-link">
+      <nuxt-link :to="'/dashboard/nuevoVideo/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'newspaper']" />
         <span>Nuevo Video</span>
       </nuxt-link>
