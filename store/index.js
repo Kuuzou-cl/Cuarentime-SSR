@@ -238,10 +238,10 @@ export const actions = {
       console.log(error)
     }
   },
-  async uploadFiles({ commit }, { file }) {
+  async uploadFiles({ state, commit }, { file }) {
     try {
       var storageRef = this.$fireStorage.ref();
-      var fileRef = storageRef.child('videos/' + file[0].name);
+      var fileRef = storageRef.child('videos/' + state.token + "/" + file[0].name);
       fileRef.put(file[0]).then((snapshot) => {
         console.log("uploaded")
       })
@@ -263,6 +263,22 @@ export const actions = {
         video.duracion = doc.data().duracion;
       });
       return video;
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  async postVideo({ commit }, { video }) {
+    try {
+      await this.$fireStore
+        .collection("videos")
+        .add({
+          titulo: "test",
+          usuario:"",
+          video: "",
+          descripcion: "",
+          paquete:"",
+          duracion:""
+        });
     } catch (error) {
       console.log(error)
     }

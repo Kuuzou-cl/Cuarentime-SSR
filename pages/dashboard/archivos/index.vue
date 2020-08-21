@@ -252,7 +252,6 @@ export default {
     submitJavs() {
       this.javs.forEach(async (file, index) => {
         await this.$store.dispatch("uploadFiles", { file: file }).then((response) => {
-          
         });
       });
     },
