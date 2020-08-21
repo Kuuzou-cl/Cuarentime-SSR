@@ -273,11 +273,32 @@ export const actions = {
         .collection("videos")
         .add({
           titulo: "test",
-          usuario:"",
+          usuario: "",
           video: "",
           descripcion: "",
-          paquete:"",
-          duracion:""
+          paquete: "",
+          duracion: ""
+        });
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  async postPaquete({ commit }, { paquete }) {
+    try {
+      await this.$fireStore
+        .collection("paquetes")
+        .add({
+          aprobado: "",
+          categoria: "",
+          comentarios: [],
+          imagen: "",
+          precio: "",
+          previsualizacion: "",
+          publicacion: "",
+          publicado: false,
+          resumen: "",
+          titulo: "",
+          videos: []
         });
     } catch (error) {
       console.log(error)
