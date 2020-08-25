@@ -1,60 +1,67 @@
 <template>
   <div>
-    <div class="container-fluid">
+    <div class="container-fluid-post">
       <div class="need-space"></div>
       <div class="need-space"></div>
       <div class="container-fluid">
-        <div class="row content-center">
-          <div v-for="(articulo, index) in articulos"
-          :key="index" 
-          class="col-lg-6 col-md-2 col-sm-4 col-xs-4">
-          <div class="need-space"></div>
+        <div class="Tittle_pag">
           <h3>Listado de articulos</h3>
-          <hr width=203% align="center">
-          <div class="need-space"></div>
-
-            <div class="col-miniPost">
+          <hr width=100% align="center">
+        </div>
+        <div class="need-space"></div>
+        <div class="need-space"></div>
+        <div v-for="(articulo, index) in articulos"
+            :key="index" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="row content-center">
+            <div  class="col-miniPost">
               <div class="need-space"></div>
               <div class="row justify-content-center">
                 <CardMiniArticulos
-                v-bind:articulo="articulo"/>
+                  v-bind:articulo="articulo"/>
               </div>
             </div>
           </div>
-        </div>
+          <div class="need-space"></div>
+          <div class="need-space"></div>
+        </div> 
       </div>
       <div class="need-space"></div>
       <div class="need-space"></div>
       <div class="need-space"></div>
+      <div class="need-space"></div>
       <div class="container-fluid">        
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> 
-            <div class="need-space"></div>
+        <div class="need-space"></div>
+        <div class="need-space"></div>
+        <div class="container-fluid">
+          <div class="Tittle_pag">
             <h3>Listado de Paquetes</h3>
-            <hr width=203% align="center">
-            <div class="need-space"></div> 
-            <div class="col-miniPost">
-              <div class="need-space"></div>
-              <div class="need-space"></div>
-              <div class="need-space"></div>
-              <div class="head-col">                               
+            <hr width=100% align="center">
+          </div>
+          <div class="need-space"></div>
+          <div class="need-space"></div>
+          <div v-for="(paquete, index) in paquetes"
+            :key="index" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="row content-center">
+              <div  class="col-miniPost">
+                <div class="need-space"></div>
+                <div class="need-space"></div>
+                <div class="need-space"></div>
+                <div class="need-space"></div>
+                <div class="row justify-content-center">
+                  <CardPack
+                    v-bind:id="paquete.id"
+                    v-bind:titulo="paquete.titulo"
+                    v-bind:resumen="paquete.resumen"
+                    v-bind:precio="paquete.precio"
+                    v-bind:imagen="paquete.imagen"
+                  /> 
+                </div>
               </div>
-              <div class="need-space"></div>
-              <div
-                v-for="(paquete,index) in paquetes"
-                :key="index"
-                class="row justify-content-center"
-              >
-                <CardPack
-                  v-bind:id="paquete.id"
-                  v-bind:titulo="paquete.titulo"
-                  v-bind:resumen="paquete.resumen"
-                  v-bind:precio="paquete.precio"
-                  v-bind:imagen="paquete.imagen"
-                />                
-              </div>
-              
             </div>
-          </div>         
+            <div class="need-space"></div>
+            <div class="need-space"></div>
+          </div> 
+        </div>      
       </div>
       <div class="need-space"></div>
       <div class="need-space"></div>

@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div class="need-space"></div>
     <!-- <BannerCategorias v-bind:categorias="categorias" /> -->
-    <div class="container-fluid">
+    <div class="container-fluid-post">
       <div class="need-space"></div>
       <div class="need-space"></div>
       <div class="container">
@@ -88,7 +87,7 @@
                     <td>Pollo Arvejado</td>
                     <td>10 min</td>
                     <td>
-                      <nuxt-link :to="'/packs/pack/01/video/ddM3EM6wb4ri3WW1LJcv'" tag="button" class="btn btn-info">
+                      <nuxt-link :to="'/packs/pack/01/video/01'" tag="button" class="btn btn-info">
                         <font-awesome-icon :icon="['fas', 'play']" />
                       </nuxt-link>
                     </td>

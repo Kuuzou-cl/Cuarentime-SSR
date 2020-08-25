@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/articulos/articulo/01'" tag="div" class="card card-articulo">
+  <nuxt-link :to="'/articulos/articulo/'+articulo.id" tag="div" class="card card-articulo">
     <div class="card-body">
       <div class="row">
         <div class="card-articulo-title">

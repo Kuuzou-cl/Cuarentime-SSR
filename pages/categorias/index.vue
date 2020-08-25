@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="container-fluid">
+    <div class="container-fluid-post">
       <div class="need-space"></div>
       <div class="need-space"></div>
       <CardCategorias v-bind:categorias="categorias"/>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container-fluid">
+    <div class="container-fluid-post">
       <div class="need-space"></div>
       <div class="need-space"></div>
       <BannerCategorias />
@@ -10,15 +10,13 @@
         <div class="card-video-default">
           <div class="row">
             <div class="col-lg-12 text-center">
-              <h4>Recetas en base a Pollo, #1 Pollo a la Mostaza</h4>
+              <h4>Recetas en base a Pollo, #1s Pollo a la Mostaza</h4>
             </div>
           </div>
           <div class="need-space"></div>
           <div class="row">
-          </div>
-          <div class="row">
             <div class="col-lg-12">
-              <VideoPlayer v-bind:video="video.video" />
+              <VideoPlayer />
             </div>
           </div>
           <div class="need-space"></div>
@@ -118,22 +116,6 @@ export default {
     CardPack02,
     Rating,
   },
-  async asyncData({ params, store }) {
-    let id = params.id2;
-    if (id == null || id == "") {
-      id = "";
-    }
-    console.log(id)
-    let video;
-    await store.dispatch("getVideo", { id: id }).then((res) => {
-      video = res;
-      console.log(res)
-    });
-    return {
-      id: id,
-      video: video
-    };
-  }
 };
 </script>
 <style lang="scss">

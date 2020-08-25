@@ -185,6 +185,24 @@ export const actions = {
       console.log(error)
     }
   },
+  async getArticulo({ commit }, { id }) {
+    let articulo = {};
+    try {
+      var articuloData = await this.$fireStore
+        .collection("articulos")
+        .doc(id);
+      await articuloData.get().then((doc) => {
+        articulo.id = doc.id;
+        articulo.titulo = doc.data().titulo;
+        articulo.contenido = doc.data().contenido;
+        articulo.duracion = doc.data().duracion;
+        articulo.usuario = doc.data().usuario;
+      });
+      return articulo
+    } catch (error) {
+      console.log(error)
+    }
+  },
   async getMisPaquetes({ state }) {
     try {
       let paquetes = [];

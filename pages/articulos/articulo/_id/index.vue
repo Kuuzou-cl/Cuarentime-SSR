@@ -1,28 +1,11 @@
 <template>
   <div>
-    <div class="container-fluid">
+    <div class="container-fluid-post">
       <div class="need-space"></div>
       <div class="need-space"></div>
-      <!-- <div class="container-fluid">
-        <div class="row content-center">
-          <div v-for="(articulo, index) in articulos"
-          :key="index" 
-          class="col-lg-11 col-md-9 col-sm-9 col-xs-9">
-            <div class="col-articulo justify-content-center">
-              <div class="need-space"></div>
-              <div class="row justify-content-center">
-                <CardArticulos
-                v-bind:articulo="articulo"/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
       <div class="container">
-        
           <div class="row content-center">
-          <div v-for="(articulo, index) in articulos"
-          :key="index" 
+          <div  
           class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
             <div class="card-articulo-default justify-content-center">
               <div class="need-space"></div>
@@ -46,27 +29,40 @@
 
 <script>
 import axios from "axios";
-import BannerCategorias from "~/components/BannerCategorias/BannerCategorias.vue";
 import CardArticulos from "~/components/CardArticulos/CardArticulos.vue";
 export default {
   layout: (ctx) => (ctx.isMobile ? "mobile" : "default"),
   components: {
     CardArticulos,
-    BannerCategorias,
+  },
+  data() {
+    return {};
+
+  },
+  head() {
+    return {
+      tittle: "",
+      meta: [
+        {
+          name: "description",
+          content:"",
+        },
+      ],
+    };
   },
 
   async asyncData({ store, params }) {
-    let articulos;
-    await store.dispatch("getArticulos").then((paq) => {
-      articulos = paq;
-    });
+    let articulo;
     let id = params.id;
     if (id == null || id == "") {
         id = ";"
     }
+    await store.dispatch("getArticulo",{id:id}).then((art) => {
+      articulo = art;
+    });
     return { 
         id: id,
-        articulos: articulos };
+        articulo: articulo };
   },
 
   beforeCreate() {},

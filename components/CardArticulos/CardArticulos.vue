@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/articulos/articulo/01'" tag="div" class="card card-articulo">
+  <div class="card card-articulo">
     <div class="card-body">
       <div class="row">
         <div class="card-articulo-title">
@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-  </nuxt-link>
+  </div>
 </template>
 
 <script>
