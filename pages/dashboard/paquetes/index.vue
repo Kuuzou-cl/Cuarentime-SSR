@@ -8,7 +8,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="title-admin">
-              <h2>Overview</h2>
+              <h2>Mis Paquetes</h2>
             </div>
           </div>
         </div>
