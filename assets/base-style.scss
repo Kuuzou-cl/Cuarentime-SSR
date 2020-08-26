@@ -1,4 +1,8 @@
-
+@media screen and (min-width: 720px) and (max-width: 1600px) {
+  .nav-item{
+    font-size: small;
+  }
+}
 
 #app{
   min-height: 100vh !important;

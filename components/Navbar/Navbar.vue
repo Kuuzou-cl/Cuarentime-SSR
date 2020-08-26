@@ -46,21 +46,21 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="/categorias">
-            <font-awesome-icon :icon="['fas', 'layer-group']" class="icon-sidebar" />
+            <font-awesome-icon :icon="['fas', 'layer-group']" class="icon-sidebar-navbar" />
             <div class="title-sidebar">Categorías</div>
           </a>
           
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/packs">
-            <font-awesome-icon :icon="['fas', 'box']" class="icon-sidebar" />
+            <font-awesome-icon :icon="['fas', 'box']" class="icon-sidebar-navbar" />
             <div class="title-sidebar">Paquetes</div>
           </a>
           
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/articulos">
-            <font-awesome-icon :icon="['fas', 'newspaper']" class="icon-sidebar" />
+            <font-awesome-icon :icon="['fas', 'newspaper']" class="icon-sidebar-navbar" />
             <div class="title-sidebar">Artículos</div>
           </a>
           
