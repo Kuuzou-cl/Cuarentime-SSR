@@ -3,7 +3,8 @@
       <div class="need-space"></div>
       <div class="wdgt widget_categorias">
         <div class="tirulo_categorias">
-          <h6>Categorias</h6>
+          <div class="need-space"></div>
+          <!-- <h6>Categorias</h6> -->
         </div>
         <form action="">
           <select name="cat" id="cat" class="postform">
@@ -20,7 +21,7 @@
       <div class="container-fluid">
         <div class="Tittle_pag">
           <h3>Listado de Paquetes</h3>
-          <hr width=100% align="center">
+          <hr width=100%  align="center">
         </div>
         <div class="need-space"></div>
         <div class="need-space"></div>
@@ -28,9 +29,6 @@
             :key="index" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
           <div class="row content-center">
             <div  class="col-miniPost">
-              <div class="need-space"></div>
-              <div class="need-space"></div>
-              <div class="need-space"></div>
               <div class="need-space"></div>
               <div class="row justify-content-center">
                 <CardPack

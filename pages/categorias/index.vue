@@ -6,9 +6,6 @@
       <CardCategorias v-bind:categorias="categorias"/>
       <div class="need-space"></div>
       <div class="need-space"></div>
-      <div class="container-fluid">
-        
-      </div>
     </div>
   </div>
 </template>

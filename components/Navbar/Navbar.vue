@@ -63,15 +63,38 @@
             <font-awesome-icon :icon="['fas', 'newspaper']" class="icon-sidebar-navbar" />
             <div class="title-sidebar">Artículos</div>
           </a>
-          
         </li>
+        
 
-        <form class="form-inline">
+        <!-- <li>
+          <div class="log-navbar">
+            <div class="row width-fix">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <Login />
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <SignUp />
+              </div>
+              <div
+                v-if="$store.state.token"
+                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"
+              >
+                <nuxt-link to="/dashboard" tag="div" class="account">
+                  <img
+                    src="https://mk0trickyphotos51tq5.kinstacdn.com/wp-content/uploads/2017/08/final-1.png"
+                  />
+                </nuxt-link>
+              </div>
+            </div>
+          </div>
+        </li> -->
+
+        <!-- <form class="form-inline">
           <button class="btn btn-sm btn-success" type="button"> <Login /></button>
         </form>
         <form class="form-inline">
           <button class="btn btn-sm btn-light" type="button"> <SignUp /></button>
-        </form>
+        </form> -->
         <!-- <li class="nav-item active" >
           <Login />
         </li> -->

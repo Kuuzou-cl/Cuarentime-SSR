@@ -1,7 +1,33 @@
 @media screen and (min-width: 720px) and (max-width: 1600px) {
-  .nav-item{
-    font-size: small;
+  .banner-card-cat-01{
+    font-size: 75%;
   }
+
+  .banner-card-cat-02{
+    font-size: 75%;    
+  }
+  
+  .banner-card-cat-03{
+    font-size: 75%;
+  }
+  
+  .banner-card-cat-04{
+    font-size: 75%;
+  }
+  
+  .banner-card-cat-05{
+    font-size: 75%;
+  }
+  
+  .banner-card-cat-06{
+    font-size: 75%;
+  }
+
+  .card-articulo-default{
+    
+  }
+
+  
 }
 
 #app{
@@ -40,7 +66,7 @@ body
 }
 
 .col-post{
-  height: 50vh;
+  height: 100%;
   color: #ffffff;
   border: 1px solid;
   border-color: #4090AA;
@@ -56,7 +82,7 @@ body
 
   .card-pack{
     width: 80%;
-    height: 240px;
+    height: 100%;
     border-color: #4090AA;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
@@ -124,6 +150,7 @@ body
   }
 }
 
+//card de Categorias de la ventana de categorias
 .card-cat-01{
   background-color: #35BEE0;
   color: #ffffff;
@@ -183,6 +210,8 @@ body
   -moz-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
   box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
 }
+
+//
 
 .pagination{
   display:flex;
@@ -425,7 +454,7 @@ body
 
 
 .col-miniPost{
-  height: 45vh;
+  height: 100%;
   color: #ffffff;
   border: 1px solid;
   border-color: #4090AA;
@@ -441,8 +470,8 @@ body
   }  
 
   .card-pack{
-    width: 80%;
-    height: 240px;
+    width: 70%;
+    height: 100%;
     border: 0px;    
     color: #444444;
     .img-pack{
@@ -472,15 +501,15 @@ body
         height: 80px;
         top: 110px;
         h6{
-          font-size: 16px;
+          font-size: 90%;
           letter-spacing: 2px;
           padding-top: 8px;
         }
         p{
-          font-size: 12px;
+          font-size: 70%;
         }
         img{
-          height: 80px;
+          height: 90%;
           width: auto;
         }
       }
@@ -489,7 +518,7 @@ body
 
   .card-articulo{
     width: 80%;
-    height: 240px;
+    height: 100%;
     border: 0px;    
     color: #444444;
     .card-articulo-title{
@@ -502,55 +531,19 @@ body
       box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
     }
     img{
-      height: 150px;
+      height: 60%;
     }
   }
 }
 
 
-/* .col-articulo{
-
-height: 85vh;
-color: #ffffff;
-border: 1px solid;
-border-color: #4090AA;
-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3);
-padding: 2%;
-.head-col{
-  background-color: #4090AA;
-  h3{
-    padding-top: 2%;
-    padding-bottom: 1%;
-    letter-spacing: 3px;
-  }
-}  
-.card-articulo{
-  width: 80%;
-  height: 240px;
-  border: 0px;    
-  color: #444444;
-  .card-articulo-title{
-    width: 100%;
-    padding: 2% 1%;
-    background-color: #f1f1f1;
-    color: #000000;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
-  }
-  img{
-    height: 350px;
-  }
-}
-} */
-
 .card-articulo-default{
-  height: 100vh;
-  width: 130vh;
+  height: 100%;
+  width: 150%;
   border: 1px solid;
   border-color: #4090AA;
   border-radius: 5px;
-  padding: 2%;
+  padding: 1%;
   -webkit-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
   -moz-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
   box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
@@ -566,13 +559,13 @@ padding: 2%;
     }
   }  
   .card-articulo{
-    width: 150%;
-    height: 240px;
+    width: 95%;
+    height: 90%;
     border: 0px;    
     color: #444444;
     .card-articulo-title{
       width: 100%;
-      padding: 2% 1%;
+      padding: 1% 1%;
       background-color: #f1f1f1;
       color: #000000;
       -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
@@ -580,7 +573,7 @@ padding: 2%;
       box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
     }
     img{
-      height: 350px;
+      height: 45%;
     }
   }
 
@@ -593,26 +586,89 @@ padding: 2%;
 
 
   .tirulo_categorias{
-  /* color: #ffffff; */
   } 
 
   .postform{
-    width: 20vh;
+    width: 100%;
     background-color: #ffffff;
   }
 }
 
 .container-fluid-post{
   background-image: url("https://static.vecteezy.com/system/resources/previews/000/681/801/non_2x/wooden-texture-light-white-color-background.jpg");
+  background-size: auto;
 
 }
 
 
 .Tittle_pag{
   background-color: rgba(0,0,0,0.2);
-  margin-right: 1vh;
+  margin-right: 0.1vh;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
 
 }
+
+//Barner categorias de la ventana home
+.banner-card-cat-01{
+  background-color: #35BEE0;
+  color: #ffffff;
+  letter-spacing: 2px;
+  border: 0px;
+  -webkit-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+}
+
+.banner-card-cat-02{
+  background-color: #59499E;
+  color: #ffffff;
+  border: 0px;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+}
+
+.banner-card-cat-03{
+  background-color: #5CBA47;
+  color: #ffffff;
+  border: 0px;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+}
+
+.banner-card-cat-04{
+  background-color: #FF6EA1;
+  color: #ffffff;
+  border: 0px;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+}
+
+.banner-card-cat-05{
+  background-color: #8589EF;
+  color: #ffffff;
+  border: 0px;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+}
+
+.banner-card-cat-06{
+  background-color: #FFC611;
+  color: #ffffff;
+  border: 0px;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.4);
+}
+
+//

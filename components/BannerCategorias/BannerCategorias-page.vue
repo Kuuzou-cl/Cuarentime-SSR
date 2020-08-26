@@ -7,7 +7,7 @@
           :key="index"
           class="col-lg-2 col-md-2 col-sm-2 col-xs-2"
         >
-          <div :class="'card banner-card-cat-0'+ (index+1)">
+          <div :class="'card card-cat-0'+ (index+1)">
             <img
               class="card-img-top"
               :src="categoria.imagen"

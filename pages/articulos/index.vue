@@ -3,7 +3,8 @@
       <div class="need-space"></div>
       <div class="wdgt widget_categorias">
         <div class="tirulo_categorias">
-          <h6>Categorias</h6>
+          <div class="need-space"></div>
+          <!-- <h6>Categorias</h6> -->
         </div>
         <form action="">
           <select name="cat" id="cat" class="postform">
