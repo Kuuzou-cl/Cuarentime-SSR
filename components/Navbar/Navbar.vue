@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" href="/">
+    <nuxt-link :to="'/'" tag="div" class="navbar-brand">
       <img src="~/assets/logo.png" width="120" height="80" alt="">
-    </a>
+    </nuxt-link>
     <div class="search-navbar">
       <div class="row width-fix">
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-center">
@@ -45,28 +45,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/categorias">
+          <nuxt-link :to="'/categorias'" tag="div" class="nav-link">
             <font-awesome-icon :icon="['fas', 'layer-group']" class="icon-sidebar-navbar" />
             <div class="title-sidebar">Categorías</div>
-          </a>
+          </nuxt-link>
           
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/packs">
+          <nuxt-link :to="'/packs'" tag="div" class="nav-link">
             <font-awesome-icon :icon="['fas', 'box']" class="icon-sidebar-navbar" />
             <div class="title-sidebar">Paquetes</div>
-          </a>
+          </nuxt-link>
           
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/articulos">
+          <nuxt-link :to="'/articulos'" tag="div" class="nav-link">
             <font-awesome-icon :icon="['fas', 'newspaper']" class="icon-sidebar-navbar" />
             <div class="title-sidebar">Artículos</div>
-          </a>
+          </nuxt-link>
         </li>
         
 
-        <!-- <li>
+        <li>
           <div class="log-navbar">
             <div class="row width-fix">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -87,7 +87,7 @@
               </div>
             </div>
           </div>
-        </li> -->
+        </li>
 
         <!-- <form class="form-inline">
           <button class="btn btn-sm btn-success" type="button"> <Login /></button>
@@ -97,20 +97,12 @@
         </form> -->
         <!-- <li class="nav-item active" >
           <Login />
-        </li> -->
+        </li>
 
-        <!-- <li class="nav-item active">
+        <li class="nav-item active">
           <SignUp />
         </li> -->
       </ul>
-      <div 
-        v-if="$store.state.token"
-        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-          <nuxt-link to="/dashboard" tag="div" class="account">
-            <img
-              src="https://mk0trickyphotos51tq5.kinstacdn.com/wp-content/uploads/2017/08/final-1.png"/>
-          </nuxt-link>
-      </div>
     </div>
   </nav>
 </template>
