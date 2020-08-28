@@ -57,11 +57,75 @@
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-row">
+                      <label for="inputJav02">Categoria del paquete</label>
+                      <input
+                        v-model="categoria.nombre"
+                        class="input-admin"
+                        id="inputJav02"
+                        placeholder="Selecciona categoria del paquete"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-row">
+                      <label for="inputJav02">Videos del paquete</label>
+                      <div class="col-lg-12">
+                        <div class="tableFixHead">
+                          <table class="table table-hover text-center">
+                            <tbody>
+                              <tr v-for="(video, key) in videos" :key="key">
+                                <th>{{video.titulo}}</th>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="need-space"></div>
               <div class="container">
                 <div class="row justify-content-center">
                   <button class="btn category-admin" @click="postPaquete()">Agregar Paquete</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h3>Videos</h3>
+                  <div class="tableFixHead">
+                    <table class="table table-hover text-center">
+                      <tbody>
+                        <tr v-for="(file, key) in files" :key="key">
+                          <th @click="selectFile(file.id, file.titulo)">{{file.titulo}}</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <h3>Categorias</h3>
+                <div class="col-lg-12">
+                  <div class="tableFixHead">
+                    <table class="table table-hover text-center">
+                      <tbody>
+                        <tr v-for="(categoria, key) in categorias" :key="key">
+                          <th
+                            @click="selectCategoria(categoria.id, categoria.nombre)"
+                          >{{categoria.nombre}}</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
@@ -86,21 +150,66 @@ export default {
   data() {
     return {
       nombre: "",
-      duracion: "",
+      precio: "",
       descripcion: "",
+      videos: [],
+      categoria: {},
     };
   },
-  async asyncData() {
-    return {};
+  async asyncData({ store }) {
+    let files = [];
+    await store.dispatch("getMisVideos").then((res) => {
+      files = res;
+    });
+    let categorias = [];
+    await store.dispatch("getCategorias").then((res) => {
+      categorias = res;
+    });
+    return {
+      files: files,
+      categorias: categorias,
+    };
   },
   methods: {
     async postPaquete() {
-      let paquete = {};
+      let paquete = {
+        aprobado: "",
+        categoria: this.categoria.id,
+        comentarios: [],
+        imagen: "",
+        precio: this.precio,
+        previsualizacion: "https://www.youtube.com/watch?v=-P28LKWTzrI",
+        publicacion: "",
+        publicado: false,
+        resumen: this.descripcion,
+        titulo: this.nombre,
+        videos: this.videos,
+      };
       await this.$store
         .dispatch("postPaquete", { paquete: paquete })
         .then((response) => {
           this.$router.push({ path: "/dashboard" });
         });
+    },
+    selectFile(_id, titulo) {
+      const exist = this.videos.find((obj) => obj.id === _id);
+      if (exist) {
+        for (var i = 0; i < this.videos.length; i++) {
+          if (this.videos[i].id === _id) {
+            this.videos.splice(i, 1);
+            i--;
+          }
+        }
+      } else {
+        this.videos.push({ id: _id, titulo: titulo });
+      }
+    },
+    selectCategoria(_id, nombre) {
+      if (this.categoria.id === _id) {
+        this.categoria = {}
+      } else {
+        this.categoria = { id: _id, nombre: nombre };
+      }
     },
   },
   computed: {},

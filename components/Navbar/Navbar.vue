@@ -66,7 +66,7 @@
         </li>
         
 
-        <!-- <li>
+        <li>
           <div class="log-navbar">
             <div class="row width-fix">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -87,7 +87,7 @@
               </div>
             </div>
           </div>
-        </li> -->
+        </li>
 
         <!-- <form class="form-inline">
           <button class="btn btn-sm btn-success" type="button"> <Login /></button>
