@@ -1,6 +1,5 @@
 <template>
   <div class="card-body">
-    <!-- <nuxt-link :to="'/categorias/01'" tag="div"> -->
       <div class="container">
         <div class="row content-center">
           <div
@@ -25,7 +24,6 @@
       </div>
       <div class="need-space"></div>
       <div class="row"></div>
-    <!-- </nuxt-link> -->
   </div>
 </template>
 

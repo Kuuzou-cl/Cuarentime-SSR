@@ -25,25 +25,28 @@
         </div>
         <div class="need-space"></div>
         <div class="need-space"></div>
-        <div v-for="(paquete, index) in paquetes"
-            :key="index" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <div class="row content-center">
-            <div  class="col-miniPost">
-              <div class="need-space"></div>
-              <div class="row justify-content-center">
-                <CardPack
-                  v-bind:id="paquete.id"
-                  v-bind:titulo="paquete.titulo"
-                  v-bind:resumen="paquete.resumen"
-                  v-bind:precio="paquete.precio"
-                  v-bind:imagen="paquete.imagen"
-                /> 
+        <div class="row">
+            <div v-for="(paquete, index) in paquetes"
+              :key="index" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <div class="row content-center">
+                <div  class="col-miniPost">
+                  <div class="need-space"></div>
+                  <div class="need-space"></div>
+                  <div class="need-space"></div>
+                  <div class="need-space"></div>
+                  <div class="row justify-content-center">
+                    <CardPack
+                      v-bind:id="paquete.id"
+                      v-bind:titulo="paquete.titulo"
+                      v-bind:resumen="paquete.resumen"
+                      v-bind:precio="paquete.precio"
+                      v-bind:imagen="paquete.imagen"
+                    /> 
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="need-space"></div>
-          <div class="need-space"></div>
-        </div> 
+            </div> 
+          </div>  
       </div>
       <div class="need-space"></div>
       <div class="need-space"></div>
@@ -54,12 +57,10 @@
 <script>
 import axios from "axios";
 import CardPack from "~/components/Card/CardPack.vue";
-import CardArticulo from "~/components/Card/CardArticulo.vue";
 export default {
   layout: (ctx) => (ctx.isMobile ? "mobile" : "default"),
   components: {
     CardPack,
-    CardArticulo,
   },
   head() {
     return {

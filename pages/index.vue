@@ -39,16 +39,28 @@
                 </div>
               </div>
               <div class="need-space"></div>
-              <div class="row justify-content-center">
-                <CardArticulo />
+              <div v-for="(articulo, index) in articulos"
+              :key="index" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row justify-content-around">
+                  <div  class="col-miniPostHome col col-lg-11 col-md-5 col-sm-5 col-xs-5">
+                    <div class="need-space"></div>
+                    <div class="row justify-content-center">
+                      <CardMiniArticulosHome
+                      v-bind:articulo="articulo"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="need-space"></div>
+                <div class="need-space"></div>
               </div>
             </div>
           </div>
-          <div class="need-space"></div>
-      <div class="need-space"></div>
-      <div class="need-space"></div>
         </div>
+        <div class="need-space"></div>
+        <div class="need-space"></div>
       </div>
+      <div class="need-space"></div>
+        <div class="need-space"></div>
     </div>
   </div>
 </template>
@@ -57,14 +69,15 @@
 import axios from "axios";
 import BannerCategorias from "~/components/BannerCategorias/BannerCategorias.vue";
 import CardPack from "~/components/Card/CardPack.vue";
-import CardArticulo from "~/components/Card/CardArticulo.vue";
+import CardMiniArticulosHome from "~/components/CardArticulos/CardMiniArticuloHome.vue";
 export default {
   layout: (ctx) => (ctx.isMobile ? "mobile" : "default"),
   components: {
     BannerCategorias,
     CardPack,
-    CardArticulo,
+    CardMiniArticulosHome,
   },
+  
   head() {
     return {
       meta: [
@@ -77,6 +90,10 @@ export default {
   },
   async asyncData({ store }) {
     let paquetes;
+    let articulos;
+    await store.dispatch("getArticulos").then((paq) => {
+      articulos = paq;
+    });
     await store.dispatch("getPaquetes").then((paq) => {
       paquetes = paq;
     });
@@ -87,6 +104,7 @@ export default {
     return {
       paquetes: paquetes.slice(0, 5),
       categorias: categorias.slice(0, 6),
+      articulos: articulos
     };
   },
   beforeCreate() {},

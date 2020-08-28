@@ -16,12 +16,12 @@
                 </div>
                 <div class="col-lg-2 text-center">
                   <div style="padding-top: 100%;">
-                    <p>{{precio}}</p>
+                    <p>{{paquete.precio}}</p>
                   </div>
                 </div>
                 <div class="col-lg-7 text-center">
-                  <h6>{{titulo}}</h6>
-                  <p>Por Jaime Sepulveda</p>
+                  <h6>{{paquete.titulo}}</h6>
+                  <p>{{paquete.usuario}}</p>
                 </div>
               </div>
             </div>
@@ -31,7 +31,7 @@
           <h5 class="card-text text-center">{{titulo}}</h5>
           <p
             class="card-text text-center"
-          >{{resumen}}</p>
+          >{{paquete.resumen}}</p>
         </div>
       </div>
     </div>
@@ -41,11 +41,7 @@
 <script>
 export default {
   props: {
-    id: String,
-    titulo: String,
-    resumen: String,
-    precio: String,
-    imagen: String,
+    paquete: Object,
   },
 };
 </script>
