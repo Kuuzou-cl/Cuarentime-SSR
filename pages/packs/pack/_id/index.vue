@@ -25,7 +25,7 @@
               <div v-if="auth" class="row">
                 <div class="col-lg-12">
                   <button class="btn btn-info float-right">
-                    Agregar al Carro
+                    Comprar
                     <font-awesome-icon :icon="['fas', 'shopping-basket']" />
                   </button>
                 </div>
@@ -97,12 +97,7 @@
             </div>
           </div>
         </div>
-        <div class="need-space"></div>
-      <div class="need-space"></div>
-      <div class="need-space"></div>
-      <div class="need-space"></div>
       </div>
-      <div class="need-space"></div>
     </div>
   </div>
 </template>

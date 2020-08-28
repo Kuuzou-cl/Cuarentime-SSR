@@ -232,6 +232,25 @@ export const actions = {
       console.log(error)
     }
   },
+  async getMisVideos({ state }) {
+    try {
+      let videos = [];
+      await this.$fireStore
+        .collection("videos").where("usuario", "==", state.token)
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            let video = {};
+            video.id = doc.id;
+            video.titulo = doc.data().titulo;
+            videos.push(video);
+          });
+        });
+      return videos;
+    } catch (error) {
+      console.log(error)
+    }
+  },
   async getMisArticulos() {
     let articulos;
     try {
@@ -267,6 +286,26 @@ export const actions = {
       console.log(error)
     }
   },
+  async getFiles({ state, commit }) {
+    let files = [];
+    try {
+      var storageRef = this.$fireStorage.ref();
+      var fileRef = storageRef.child('videos/' + state.token);
+      fileRef.listAll().then((res) => {
+        res.items.forEach((file) => {
+          let tempFile = {};
+          tempFile.name = file.location.path_;
+          file.getDownloadURL().then((url) => {
+            tempFile.url = url
+          })
+          files.push(tempFile)
+        })
+      })
+    } catch (error) {
+      console.log(error)
+    }
+    return files;
+  },
   async getVideo({ commit }, { id }) {
     let video = {};
     try {
@@ -285,38 +324,39 @@ export const actions = {
       console.log(error)
     }
   },
-  async postVideo({ commit }, { video }) {
+  async postVideo({ state, commit }, { video }) {
     try {
       await this.$fireStore
         .collection("videos")
         .add({
-          titulo: "test",
-          usuario: "",
-          video: "",
-          descripcion: "",
+          titulo: video.titulo,
+          usuario: state.token,
+          video: video.video,
+          descripcion: video.descripcion,
           paquete: "",
-          duracion: ""
+          duracion: video.duracion
         });
     } catch (error) {
       console.log(error)
     }
   },
-  async postPaquete({ commit }, { paquete }) {
+  async postPaquete({ state, commit }, { paquete }) {
     try {
       await this.$fireStore
         .collection("paquetes")
         .add({
           aprobado: "",
-          categoria: "",
+          categoria: paquete.categoria,
           comentarios: [],
           imagen: "",
-          precio: "",
-          previsualizacion: "",
+          precio: paquete.precio,
+          previsualizacion: paquete.previsualizacion,
           publicacion: "",
           publicado: false,
-          resumen: "",
-          titulo: "",
-          videos: []
+          resumen: paquete.resumen,
+          titulo: paquete.titulo,
+          videos: paquete.videos,
+          usuario: state.token
         });
     } catch (error) {
       console.log(error)
