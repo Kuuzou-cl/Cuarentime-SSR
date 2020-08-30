@@ -24,7 +24,7 @@
               </div>
               <div v-if="auth" class="row">
                 <div class="col-lg-12">
-                  <button class="btn btn-info float-right">
+                  <button class="btn btn-info float-right" @click="comprar()">
                     Comprar
                     <font-awesome-icon :icon="['fas', 'shopping-basket']" />
                   </button>
@@ -104,9 +104,13 @@
 
 <script>
 import axios from "axios";
+import sha256 from "crypto-js/sha256";
+import hmacSHA512 from "crypto-js/hmac-sha512";
+import Base64 from "crypto-js/enc-base64";
 import BannerCategorias from "~/components/BannerCategorias/BannerCategorias.vue";
 import VideoPlayer from "~/components/VideoPlayer/VideoPlayer.vue";
 import CardPack02 from "~/components/Card/CardPack02.vue";
+
 export default {
   layout: (ctx) => (ctx.isMobile ? "mobile" : "default"),
   name: "",
@@ -151,12 +155,90 @@ export default {
   },
   beforeCreate() {},
   methods: {
-    comprar() {
-      if (this.comprado) {
-        this.comprado = !this.comprado;
-      } else {
-        this.comprado = !this.comprado;
+    async comprar() {
+      let apiKey = "6B2007FC-671E-4A3C-A843-326LDDF9410F";
+      let secretKey = "4e34c141e847d71141e3d542d30ffd8d3932e8e9";
+
+      let subject = "Pago Prueba Web";
+      let currency = "CLP";
+      let amount = "5000";
+      let email = "carlobernucci@gmail.com";
+      let commerceOrder = "918272121";
+      let uriCrearPago = "https://sandbox.flow.cl/api/payment/create";
+      let uriObtenerEstadoPago =
+        "https://sandbox.flow.cl/api/payment/getStatus";
+      let urlConfirmation =
+        "https://us-central1-cuarentime-test.cloudfunctions.net/confirmacion";
+      let urlReturn =
+        "https://us-central1-cuarentime-test.cloudfunctions.net/randomNumber";
+
+      let parametrosOrdenados =
+        "amount" +
+        amount +
+        "apiKey" +
+        apiKey +
+        "commerceOrder" +
+        commerceOrder +
+        "email" +
+        email +
+        "subject" +
+        subject +
+        "urlConfirmation" +
+        urlConfirmation +
+        "urlReturn" +
+        urlReturn;
+
+      var arrParametros = [];
+      for (var i = 0; i < parametrosOrdenados.length; i++) {
+        arrParametros.push(parametrosOrdenados.charCodeAt(i));
       }
+      var arrSecretKey = [];
+      for (var i = 0; i < secretKey.length; i++) {
+        arrSecretKey.push(secretKey.charCodeAt(i));
+      }
+      const hashDigest = sha256(arrSecretKey);
+      const sign = Base64.stringify(sha256(arrParametros, hashDigest));
+      console.log(sign);
+
+      let response = await axios
+        .post(
+          uriCrearPago +
+            '?amount="' +
+            amount +
+            '"&apiKey="' +
+            apiKey +
+            '"&commerceOrder="' +
+            commerceOrder +
+            '"&email="' +
+            email +
+            '"&subject="' +
+            subject +
+            '"&urlConfirmation="' +
+            urlConfirmation +
+            '"&urlReturn="' +
+            urlReturn +
+            '"&s="' +
+            sign +
+            '"',
+          {
+            amount: amount,
+            apiKey: "6B2007FC-671E-4A3C-A843-326LDDF9410F",
+            commerceOrder: commerceOrder,
+            email: email,
+            subject: subject,
+            urlConfirmation: urlConfirmation,
+            urlReturn: urlReturn,
+            s: sign,
+          },
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+            },
+          }
+        )
+        .catch((e) => {
+          console.log(e);
+        });
     },
   },
   computed: {
