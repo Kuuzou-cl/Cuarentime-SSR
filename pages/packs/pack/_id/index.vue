@@ -156,18 +156,15 @@ export default {
   beforeCreate() {},
   methods: {
     async comprar() {
-      let apiKey = unescape(
-        encodeURIComponent("6B2007FC-671E-4A3C-A843-326LDDF9410F")
-      );
-      let secretKey = unescape(
-        encodeURIComponent("4e34c141e847d71141e3d542d30ffd8d3932e8e9")
-      );
+      let apiKey = "6B2007FC-671E-4A3C-A843-326LDDF9410F";
+      let secretKey = "4e34c141e847d71141e3d542d30ffd8d3932e8e9";
+
       let subject = "Pago Prueba Web";
       let currency = "CLP";
       let amount = "5000";
       let email = "carlobernucci@gmail.com";
       let commerceOrder = "918272121";
-      let uriCrearPago = "https://sandbox.flow.cl/api/payment/create/";
+      let uriCrearPago = "https://sandbox.flow.cl/api/payment/create";
       let uriObtenerEstadoPago =
         "https://sandbox.flow.cl/api/payment/getStatus";
       let urlConfirmation =
@@ -191,10 +188,16 @@ export default {
         "urlReturn" +
         urlReturn;
 
-      const hashDigest = sha256(secretKey);
-      const sign = Base64.stringify(
-        hmacSHA512(parametrosOrdenados, hashDigest)
-      );
+      var arrParametros = [];
+      for (var i = 0; i < parametrosOrdenados.length; i++) {
+        arrParametros.push(parametrosOrdenados.charCodeAt(i));
+      }
+      var arrSecretKey = [];
+      for (var i = 0; i < secretKey.length; i++) {
+        arrSecretKey.push(secretKey.charCodeAt(i));
+      }
+      const hashDigest = sha256(arrSecretKey);
+      const sign = Base64.stringify(sha256(arrParametros, hashDigest));
       console.log(sign);
 
       let response = await axios
