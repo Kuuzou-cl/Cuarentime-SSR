@@ -13,10 +13,8 @@ export default {
     video: String,
   },
   data() {
-    return {
-
-    };
-  }
+    return {};
+  },
 };
 </script>
 

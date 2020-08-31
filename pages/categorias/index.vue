@@ -1,9 +1,9 @@
 <template>
-<div>
+  <div>
     <div class="container-fluid-post">
       <div class="need-space"></div>
       <div class="need-space"></div>
-      <CardCategorias v-bind:categorias="categorias"/>
+      <CardCategorias v-bind:categorias="categorias" />
       <div class="need-space"></div>
       <div class="need-space"></div>
     </div>
@@ -16,7 +16,7 @@ import CardCategorias from "~/components/CardCategorias/CardCategorias.vue";
 export default {
   layout: (ctx) => (ctx.isMobile ? "mobile" : "default"),
   components: {
-    CardCategorias
+    CardCategorias,
   },
   head() {
     return {

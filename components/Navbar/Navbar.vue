@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-light">
     <nuxt-link :to="'/'" tag="div" class="navbar-brand">
-      <img src="~/assets/logo.png" width="120" height="80" alt="">
+      <img src="~/assets/logo.png" width="120" height="80" alt />
     </nuxt-link>
     <div class="search-navbar">
       <div class="row width-fix">
@@ -30,18 +30,18 @@
         </div>
       </div>
     </div>
-    <button 
-      class="navbar-toggler" 
-      type="button" 
-      data-toggle="collapse" 
-      data-target="#navbarSupportedContent" 
-      aria-controls="navbarSupportedContent" 
-      aria-expanded="false" 
-      aria-label="Toggle navigation">
-      
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -49,14 +49,12 @@
             <font-awesome-icon :icon="['fas', 'layer-group']" class="icon-sidebar-navbar" />
             <div class="title-sidebar">Categorías</div>
           </nuxt-link>
-          
         </li>
         <li class="nav-item active">
           <nuxt-link :to="'/packs'" tag="div" class="nav-link">
             <font-awesome-icon :icon="['fas', 'box']" class="icon-sidebar-navbar" />
             <div class="title-sidebar">Paquetes</div>
           </nuxt-link>
-          
         </li>
         <li class="nav-item active">
           <nuxt-link :to="'/articulos'" tag="div" class="nav-link">
@@ -64,7 +62,6 @@
             <div class="title-sidebar">Artículos</div>
           </nuxt-link>
         </li>
-        
 
         <li>
           <div class="log-navbar">
@@ -94,14 +91,14 @@
         </form>
         <form class="form-inline">
           <button class="btn btn-sm btn-light" type="button"> <SignUp /></button>
-        </form> -->
+        </form>-->
         <!-- <li class="nav-item active" >
           <Login />
         </li>
 
         <li class="nav-item active">
           <SignUp />
-        </li> -->
+        </li>-->
       </ul>
     </div>
   </nav>

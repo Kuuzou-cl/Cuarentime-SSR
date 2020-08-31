@@ -121,6 +121,7 @@ export const actions = {
             paqueteReferencia.precio = doc.data().precio;
             paqueteReferencia.titulo = doc.data().titulo;
             paqueteReferencia.resumen = doc.data().resumen;
+            paqueteReferencia.usuario = doc.data().usuario;
             paquetesReferencia.push(paqueteReferencia);
           });
           paquetes = paquetesReferencia;

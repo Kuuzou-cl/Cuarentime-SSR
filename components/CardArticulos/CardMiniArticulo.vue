@@ -8,7 +8,8 @@
               <h5 class="card-text">{{articulo.titulo}}</h5>
             </div>
             <div class="col-lg-2">
-              <font-awesome-icon :icon="['fas', 'clock']" class="icon-sidebar" />{{articulo.duracion}}
+              <font-awesome-icon :icon="['fas', 'clock']" class="icon-sidebar" />
+              {{articulo.duracion}}
             </div>
             <div class="col-lg-2">
               <font-awesome-icon :icon="['fas', 'calendar-alt']" class="icon-sidebar" />07-08-2020
@@ -29,9 +30,7 @@
         </div>
         <div class="col-lg-8">
           <h6>Resumen:</h6>
-          <p
-            class="card-text text-center"
-          >{{limitadorCaracter()}}</p>
+          <p class="card-text text-center">{{limitadorCaracter()}}</p>
         </div>
       </div>
     </div>
@@ -40,12 +39,12 @@
 
 <script>
 export default {
-  props:{
+  props: {
     articulo: Object,
   },
   methods: {
-    limitadorCaracter(){
-      return this.articulo.contenido.substring(0,500) + "..."
+    limitadorCaracter() {
+      return this.articulo.contenido.substring(0, 500) + "...";
     },
   },
 };

@@ -47,5 +47,14 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  props: {
+    id: String,
+    titulo: String,
+    resumen: String,
+    precio: String,
+    imagen: String,
+    usuario: String,
+  },
+};
 </script>

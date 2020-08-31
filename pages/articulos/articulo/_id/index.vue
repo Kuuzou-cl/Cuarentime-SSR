@@ -4,19 +4,16 @@
       <div class="need-space"></div>
       <div class="need-space"></div>
       <div class="container">
-          <div class="col flex-row">
-          <div  
-          class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+        <div class="col flex-row">
+          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
             <div class="card-articulo-default justify-content-center">
               <div class="need-space"></div>
               <div class="row justify-content-center">
-                <CardArticulos
-                v-bind:articulo="articulo"/>
+                <CardArticulos v-bind:articulo="articulo" />
               </div>
             </div>
           </div>
         </div>
-        
       </div>
       <div class="need-space"></div>
       <div class="need-space"></div>
@@ -37,7 +34,6 @@ export default {
   },
   data() {
     return {};
-
   },
   head() {
     return {
@@ -45,7 +41,7 @@ export default {
       meta: [
         {
           name: "description",
-          content:"",
+          content: "",
         },
       ],
     };
@@ -55,14 +51,15 @@ export default {
     let articulo;
     let id = params.id;
     if (id == null || id == "") {
-        id = ";"
+      id = ";";
     }
-    await store.dispatch("getArticulo",{id:id}).then((art) => {
+    await store.dispatch("getArticulo", { id: id }).then((art) => {
       articulo = art;
     });
-    return { 
-        id: id,
-        articulo: articulo };
+    return {
+      id: id,
+      articulo: articulo,
+    };
   },
 
   beforeCreate() {},

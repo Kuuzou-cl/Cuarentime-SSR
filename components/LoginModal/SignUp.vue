@@ -42,7 +42,12 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-more" @click="signUp" data-dismiss="modal">Crear Cuenta</button>
+            <button
+              type="button"
+              class="btn btn-more"
+              @click="signUp"
+              data-dismiss="modal"
+            >Crear Cuenta</button>
           </div>
         </div>
       </div>

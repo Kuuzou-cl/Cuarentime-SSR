@@ -11,7 +11,8 @@
               <div class="need-space"></div>
             </div>
             <div class="col-lg-1">
-              <font-awesome-icon :icon="['fas', 'clock']" class="icon-sidebar" />{{articulo.duracion}}
+              <font-awesome-icon :icon="['fas', 'clock']" class="icon-sidebar" />
+              {{articulo.duracion}}
             </div>
             <div class="col-lg-2">
               <font-awesome-icon :icon="['fas', 'calendar-alt']" class="icon-sidebar" />07-08-2020
@@ -29,10 +30,8 @@
             src="https://mk0trickyphotos51tq5.kinstacdn.com/wp-content/uploads/2017/08/final-1.png"
           />
         </div>
-        <div class="col-lg-8">          
-          <p
-            class="card-text text-center"
-          >{{articulo.contenido}}</p>
+        <div class="col-lg-8">
+          <p class="card-text text-center">{{articulo.contenido}}</p>
         </div>
       </div>
     </div>
@@ -41,9 +40,9 @@
 
 <script>
 export default {
-  props:{
+  props: {
     articulo: Object,
-  }
+  },
 };
 </script>
 
