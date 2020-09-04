@@ -62,6 +62,11 @@
             <div class="title-sidebar">Artículos</div>
           </nuxt-link>
         </li>
+        <li class="nav-item">
+          <nuxt-link :to="'/administrador'" tag="div" class="nav-link">
+            <div class="title-sidebar">administrador</div>
+          </nuxt-link>
+        </li>
 
         <li>
           <div class="log-navbar">

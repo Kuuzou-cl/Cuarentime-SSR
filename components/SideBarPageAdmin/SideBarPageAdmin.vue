@@ -1,63 +1,44 @@
 <template>
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-    <nuxt-link
-      :to="'/dashboard'"
-      class="sidebar-brand d-flex align-items-center justify-content-center"
-    >
-      <div class="sidebar-brand-text mx-3">Inicio</div>
-    </nuxt-link>
+    <li class="nav-item nav-profile border-bottom">
+      <nuxt-link :to="'/administrador/datosAdmin/'" class="nav-link flex-column">
+        <div>
+          <img
+          src="https://mk0trickyphotos51tq5.kinstacdn.com/wp-content/uploads/2017/08/final-1.png" style="width: 97%"
+        />
+        </div>
+        <div class="need-space"></div>
+        <div class="font-weight-semibold mb-1 .t2 text-center">
+          Juan Sepulveda Acevedo
+        </div>
+      </nuxt-link>
+    </li>
     <hr class="sidebar-divider my-0" />
     <li class="nav-item active">
-      <nuxt-link :to="'/'" class="nav-link">
-        <span>Volver a Cuarentime</span>
+      <nuxt-link :to="'/administrador'" class="nav-link">
+        <span>Inicio</span>
       </nuxt-link>
     </li>
     <hr class="sidebar-divider" />
     <div class="sidebar-heading">Tu Perfil</div>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/datos/'" class="nav-link">
+      <nuxt-link :to="'/administrador/datosAdmin/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'id-badge']" />
         <span>Mis Datos</span>
       </nuxt-link>
     </li>
-    <li class="nav-item">
-      <nuxt-link :to="'/dashboard/ventas/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
-        <span>Mis Ventas</span>
-      </nuxt-link>
-    </li>
     <hr class="sidebar-divider" />
     <div class="sidebar-heading">Tu Contenido</div>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/nuevoPaquete/'" class="nav-link">
+      <nuxt-link :to="'/administrador/paquetesAdmin/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'box-open']" />
-        <span>Nuevo Paquete</span>
+        <span>Paquetes</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/nuevoVideo/'" class="nav-link">
+      <nuxt-link :to="'/administrador/articulosAdmin/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'newspaper']" />
-        <span>Nuevo Video</span>
-      </nuxt-link>
-    </li>
-    <li class="nav-item">
-      <nuxt-link :to="'/dashboard/archivos/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'file-video']" />
-        <span>Subir Archivos</span>
-      </nuxt-link>
-    </li>
-    <hr class="sidebar-divider" />
-    <div class="sidebar-heading">Tu Contenido</div>
-    <li class="nav-item">
-      <nuxt-link :to="'/dashboard/paquetes/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'box-open']" />
-        <span>Mis Paquetes</span>
-      </nuxt-link>
-    </li>
-    <li class="nav-item">
-      <nuxt-link :to="'/dashboard/articulos/'" class="nav-link">
-        <font-awesome-icon :icon="['fas', 'newspaper']" />
-        <span>Mis Articulos</span>
+        <span>Articulos</span>
       </nuxt-link>
     </li>
     <!-- Divider -->
@@ -65,13 +46,13 @@
     <!-- Heading -->
     <div class="sidebar-heading">Reportes</div>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/estadisticas/'" class="nav-link">
+      <nuxt-link :to="'/administrador/estadisticas/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'chart-pie']" />
         <span>Estadisticas</span>
       </nuxt-link>
     </li>
     <li class="nav-item">
-      <nuxt-link :to="'/dashboard/denuncias/'" class="nav-link">
+      <nuxt-link :to="'/administrador/denuncias/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'flag']" />
         <span>Denuncias</span>
       </nuxt-link>
@@ -105,5 +86,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./sidebarAdmin.scss";
+@import "./SideBarPageAdmin.scss";
 </style>
