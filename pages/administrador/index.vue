@@ -15,9 +15,38 @@
         <div class="need-space"></div>
         <div class="need-space"></div>
         <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-car">
+              <div class="card shadow ">
+                <div class="card-body">
+                  <div>
+                    <div class="chartjs-size-monitor">
+                      <div class="chartjs-size-monitor-expand">
+                        <div class></div>
+                      </div>
+                      <div class="chartjs-size-monitor-shrink">
+                        <div class></div>
+                      </div>
+                    </div>
+                    <h4 class="card-tittle">Categorias</h4>
+                    <mdb-container>
+                      <mdb-bar-chart
+                        :data="barChartData"
+                        :options="barChartOptions"
+                        :width="600"
+                        :height="400"
+                      ></mdb-bar-chart>
+                    </mdb-container>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="need-space"></div>
+          <div class="need-space"></div>
           <div class="row justify-content-center">
             <div class="col-lg-12">
-              <h4>Ultimos Paquetes Aprobados</h4>
+              <h3>Ultimos Paquetes</h3>
             </div>
           </div>
           <div class="need-space"></div>
@@ -53,7 +82,7 @@
                     <td>@fat</td>
                     <td>Juan Sepulveda Acevedo</td>
                     <td>Deporte</td>
-                    <td>Aprobada</td>
+                    <td>Reprobada</td>
                   </tr>
                   <tr>
                     <th>3</th>
@@ -83,35 +112,7 @@
               </table>
             </div>
           </div>
-          <div class="need-space"></div>
-          <div class="need-space"></div>
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-car">
-              <div class="card">
-                <div class="card-body">
-                  <div>
-                    <div class="chartjs-size-monitor">
-                      <div class="chartjs-size-monitor-expand">
-                        <div class></div>
-                      </div>
-                      <div class="chartjs-size-monitor-shrink">
-                        <div class></div>
-                      </div>
-                    </div>
-                    <h4 class="card-tittle">Categorias</h4>
-                    <mdb-container>
-                      <mdb-bar-chart
-                        :data="barChartData"
-                        :options="barChartOptions"
-                        :width="600"
-                        :height="400"
-                      ></mdb-bar-chart>
-                    </mdb-container>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
         <!-- /.container-fluid -->
       </div>
@@ -141,8 +142,27 @@ export default {
         labels: ["Cocina", "Tecnologia", "Salud", "Deporte", "Economia"],
         datasets: [
           {
-            label: "# of Votes",
+            label: "Paquetes",
             data: [12, 19, 3, 5, 2],
+            backgroundColor: [
+              "rgba(53, 190, 224, 0.2)",
+              "rgba(89, 73, 158, 0.2)",
+              "rgba(92, 186, 71, 0.2)",
+              "rgba(255, 110, 161, 0.2)",
+              "rgba(133, 137, 239, 0.2)",
+            ],
+            borderColor: [
+              "rgba(53, 190, 224, 1)",
+              "rgba(89, 73, 158, 1)",
+              "rgba(92, 186, 71, 1)",
+              "rgba(255, 110, 161, 1)",
+              "rgba(133, 137, 239, 1)",
+            ],
+            borderWidth: 1,
+          },
+          {
+            label: "Articulos",
+            data: [9, 25, 6, 2, 8],
             backgroundColor: [
               "rgba(53, 190, 224, 0.2)",
               "rgba(89, 73, 158, 0.2)",
@@ -185,49 +205,6 @@ export default {
         },
       },
     };
-    /* return {
-      pieChartData: {
-        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
-        datasets: [
-          {
-            data: [200, 50, 100, 40, 120],
-            backgroundColor: [
-              "#F7464A",
-              "#46BFBD",
-              "#FDB45C",
-              "#949FB1",
-              "#4D5360",
-            ],
-            hoverBackgroundColor: [
-              "#FF5A5E",
-              "#5AD3D1",
-              "#FFC870",
-              "#A8B3C5",
-              "#616774",
-            ],
-          },
-        ],
-      },
-      pieChartOptions: {
-        responsive: false,
-        maintainAspectRatio: false,
-        plugins: {
-          datalabels: {
-            color: "white",
-            align: "center",
-            font: {
-              size: 16,
-            },
-            formatter: (value) => {
-              const [dataset] = this.pieChartData.datasets;
-              const setValue = dataset.data.reduce((a, b) => a + b);
-
-              return `${Math.round((value / setValue) * 100)}%`;
-            },
-          },
-        },
-      },
-    }; */
   },
   methods: {},
   computed: {},

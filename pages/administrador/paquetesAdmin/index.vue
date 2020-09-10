@@ -15,6 +15,62 @@
         <div class="need-space"></div>
         <div class="need-space"></div>
         <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-car">
+              <div class="card shadow">
+                <div class="card-body">
+                  <div>
+                    <div class="chartjs-size-monitor">
+                      <div class="chartjs-size-monitor-expand">
+                        <div class></div>
+                      </div>
+                      <div class="chartjs-size-monitor-shrink">
+                        <div class></div>
+                      </div>
+                    </div>
+                    <h4 class="card-tittle">Paquetes</h4>
+                    <mdb-container>
+                      <mdb-pie-chart
+                        data-labels
+                        :data="pieChartData"
+                        :options="pieChartOptions"
+                        :width="600"
+                        :height="300"
+                      />
+                    </mdb-container>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-car">
+              <div class="card shadow">
+                <div class="card-body">
+                  <div>
+                    <div class="chartjs-size-monitor">
+                      <div class="chartjs-size-monitor-expand">
+                        <div class></div>
+                      </div>
+                      <div class="chartjs-size-monitor-shrink">
+                        <div class></div>
+                      </div>
+                    </div>
+                    <h4 class="card-tittle">Articulos por categorias</h4>
+                    <mdb-container>
+                      <mdb-pie-chart
+                        data-labels
+                        :data="pieChartData"
+                        :options="pieChartOptions"
+                        :width="600"
+                        :height="300"
+                      />
+                    </mdb-container>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="need-space"></div>
+          <div class="need-space"></div>
           <div class="row justify-content-center">
             <div class="col-lg-12">
               <h4>Ultimos Paquetes Subidos</h4>
@@ -42,13 +98,11 @@
                     <td>4</td>
                     <td>Cocina</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Aprobar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Reprobar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
@@ -58,13 +112,11 @@
                     <td>3</td>
                     <td>Deporte</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Aprobar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Reprobar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
@@ -74,13 +126,11 @@
                     <td>7</td>
                     <td>Tecnologia</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Aprobar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Reprobar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
 
@@ -104,32 +154,85 @@
           </div>
           <div class="need-space"></div>
           <div class="need-space"></div>
-          <div class="row">
-            <div class="col-lg-6 grid-margin stretch-car">
-              <div class="card">
-                <div class="card-body">
-                  <div>
-                    <div class="chartjs-size-monitor">
-                      <div class="chartjs-size-monitor-expand">
-                        <div class></div>
-                      </div>
-                      <div class="chartjs-size-monitor-shrink">
-                        <div class></div>
-                      </div>
-                    </div>
-                    <h4 class="card-tittle">Paquetes</h4>
-                    <mdb-container>
-                      <mdb-pie-chart
-                        data-labels
-                        :data="pieChartData"
-                        :options="pieChartOptions"
-                        :width="600"
-                        :height="300"
-                      />
-                    </mdb-container>
-                  </div>
-                </div>
-              </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <h4>Ultimos Paquetes Reprobados</h4>
+            </div>
+          </div>
+          <div class="need-space"></div>
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Titulo Paquete</th>
+                    <th scope="col">Cantidad de videos</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1</th>
+                    <td>Mark</td>
+                    <td>Pollo con arroz</td>
+                    <td>4</td>
+                    <td>Cocina</td>
+                    <td>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <td>Jacob</td>
+                    <td>Futbol</td>
+                    <td>3</td>
+                    <td>Deporte</td>
+                    <td>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <td>Larry</td>
+                    <td>Limpiar PC</td>
+                    <td>7</td>
+                    <td>Tecnologia</td>
+                    <td>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <!-- <tr v-for="(paquete,index) in paquetes" :key="index">
+                    <th scope="row">1</th>
+                    <td>{{paquete.titulo}}</td>
+                    <td>{{paquete.videos.length}}</td>
+                    <td>{{paquete.comentarios.length}}</td>
+                    <td>{{paquete.aprobado}}</td>
+                    <td>
+                      <button type="button" class="btn btn-warning" disabled>Cocina</button>
+                    </td>
+                    <td>{{paquete.publicacion}}</td>
+                    <td>
+                      <button type="button" class="btn btn-info">Editar</button>
+                    </td>
+                  </tr>-->
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

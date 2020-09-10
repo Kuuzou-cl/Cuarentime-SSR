@@ -28,7 +28,7 @@
       </nuxt-link>
     </li>
     <hr class="sidebar-divider" />
-    <div class="sidebar-heading">Tu Contenido</div>
+    <div class="sidebar-heading">Contenido</div>
     <li class="nav-item">
       <nuxt-link :to="'/administrador/paquetesAdmin/'" class="nav-link">
         <font-awesome-icon :icon="['fas', 'box-open']" />

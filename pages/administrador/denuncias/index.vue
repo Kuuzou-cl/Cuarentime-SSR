@@ -42,13 +42,11 @@
                     <td>Cocinar arroz</td>
                     <td>no habla sobre el titulo del articulo</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Eliminar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Ocultar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
@@ -58,13 +56,11 @@
                     <td>Covid-19</td>
                     <td>Información falsa</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Aprobar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Reprobar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
@@ -74,13 +70,11 @@
                     <td>Formatear</td>
                     <td>Se explica muy mal</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Aprobar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Reprobar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
 
@@ -135,13 +129,11 @@
                     <td>Cocinar arroz</td>
                     <td>no habla sobre el titulo del articulo</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Eliminar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Ocultar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
@@ -151,13 +143,11 @@
                     <td>Covid-19</td>
                     <td>Información falsa</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Aprobar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Reprobar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
@@ -167,13 +157,11 @@
                     <td>Formatear</td>
                     <td>Se explica muy mal</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Aprobar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Reprobar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
 

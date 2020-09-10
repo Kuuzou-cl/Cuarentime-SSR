@@ -15,6 +15,62 @@
         <div class="need-space"></div>
         <div class="need-space"></div>
         <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-car">
+              <div class="card shadow">
+                <div class="card-body">
+                  <div>
+                    <div class="chartjs-size-monitor">
+                      <div class="chartjs-size-monitor-expand">
+                        <div class></div>
+                      </div>
+                      <div class="chartjs-size-monitor-shrink">
+                        <div class></div>
+                      </div>
+                    </div>
+                    <h4 class="card-tittle">Articulos por categorias</h4>
+                    <mdb-container>
+                      <mdb-pie-chart
+                        data-labels
+                        :data="pieChartData"
+                        :options="pieChartOptions"
+                        :width="600"
+                        :height="300"
+                      />
+                    </mdb-container>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-car">
+              <div class="card shadow">
+                <div class="card-body">
+                  <div>
+                    <div class="chartjs-size-monitor">
+                      <div class="chartjs-size-monitor-expand">
+                        <div class></div>
+                      </div>
+                      <div class="chartjs-size-monitor-shrink">
+                        <div class></div>
+                      </div>
+                    </div>
+                    <h4 class="card-tittle">Articulos por categorias</h4>
+                    <mdb-container>
+                      <mdb-pie-chart
+                        data-labels
+                        :data="pieChartData"
+                        :options="pieChartOptions"
+                        :width="600"
+                        :height="300"
+                      />
+                    </mdb-container>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="need-space"></div>
+          <div class="need-space"></div>
           <div class="row justify-content-center">
             <div class="col-lg-12">
               <h4>Ultimos Articulos Subidos</h4>
@@ -40,13 +96,11 @@
                     <td>Pollo con arroz</td>
                     <td>Cocina</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Eliminar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Ocultar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
@@ -55,13 +109,11 @@
                     <td>Futbol</td>
                     <td>Deporte</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Aprobar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Reprobar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
@@ -70,13 +122,11 @@
                     <td>Limpiar PC</td>
                     <td>Tecnologia</td>
                     <td>
-                      <mdb-dropdown>
-                        <mdb-dropdown-toggle slot="toggle">Acción</mdb-dropdown-toggle>
-                        <mdb-dropdown-menu>
-                          <mdb-dropdown-item>Aprobar</mdb-dropdown-item>
-                          <mdb-dropdown-item>Reprobar</mdb-dropdown-item>
-                        </mdb-dropdown-menu>
-                      </mdb-dropdown>
+                      <select name="" id="">
+                        <option value="0">Seleccione una opcion</option>
+                        <option value="1">Aprobar</option>
+                        <option value="2">Reprobar</option>
+                      </select>
                     </td>
                   </tr>
 
@@ -96,36 +146,6 @@
                   </tr>-->
                 </tbody>
               </table>
-            </div>
-          </div>
-          <div class="need-space"></div>
-          <div class="need-space"></div>
-          <div class="row">
-            <div class="col-lg-6 grid-margin stretch-car">
-              <div class="card">
-                <div class="card-body">
-                  <div>
-                    <div class="chartjs-size-monitor">
-                      <div class="chartjs-size-monitor-expand">
-                        <div class></div>
-                      </div>
-                      <div class="chartjs-size-monitor-shrink">
-                        <div class></div>
-                      </div>
-                    </div>
-                    <h4 class="card-tittle">Articulos por categorias</h4>
-                    <mdb-container>
-                      <mdb-pie-chart
-                        data-labels
-                        :data="pieChartData"
-                        :options="pieChartOptions"
-                        :width="600"
-                        :height="300"
-                      />
-                    </mdb-container>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
