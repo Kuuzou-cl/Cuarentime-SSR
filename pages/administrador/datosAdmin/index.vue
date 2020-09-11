@@ -117,7 +117,7 @@
 import axios from "axios";
 import SideBarPageAdmin from "~/components/SideBarPageAdmin/SideBarPageAdmin.vue";
 export default {
-  layout: "admin",
+  layout: "superAdmin",
   name: "Dashboard",
   components: {
     SideBarPageAdmin,

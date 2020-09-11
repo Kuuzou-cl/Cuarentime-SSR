@@ -255,7 +255,7 @@ import {
 } from "mdbvue";
 /* import { mdbPieChart, mdbContainer } from "mdbvue"; */
 export default {
-  layout: "admin",
+  layout: "superAdmin",
   name: "Dashboard",
   components: {
     SideBarPageAdmin,

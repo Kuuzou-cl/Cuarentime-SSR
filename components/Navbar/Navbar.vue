@@ -62,12 +62,6 @@
             <div class="title-sidebar">Artículos</div>
           </nuxt-link>
         </li>
-        <li class="nav-item">
-          <nuxt-link :to="'/administrador'" tag="div" class="nav-link">
-            <div class="title-sidebar">administrador</div>
-          </nuxt-link>
-        </li>
-
         <li>
           <div class="log-navbar">
             <div class="row width-fix">
@@ -78,10 +72,20 @@
                 <SignUp />
               </div>
               <div
-                v-if="$store.state.token"
+                v-if="$store.state.token && !$store.state.tipo"
                 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"
               >
                 <nuxt-link to="/dashboard" tag="div" class="account">
+                  <img
+                    src="https://mk0trickyphotos51tq5.kinstacdn.com/wp-content/uploads/2017/08/final-1.png"
+                  />
+                </nuxt-link>
+              </div>
+              <div
+                v-if="$store.state.token && $store.state.tipo"
+                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"
+              >
+                <nuxt-link to="/administrador" tag="div" class="account">
                   <img
                     src="https://mk0trickyphotos51tq5.kinstacdn.com/wp-content/uploads/2017/08/final-1.png"
                   />

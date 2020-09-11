@@ -104,8 +104,7 @@
 
 <script>
 import axios from "axios";
-import sha256 from "crypto-js/sha256";
-import hmacSHA512 from "crypto-js/hmac-sha512";
+import hmacSHA256 from "crypto-js/hmac-sha256";
 import Base64 from "crypto-js/enc-base64";
 import BannerCategorias from "~/components/BannerCategorias/BannerCategorias.vue";
 import VideoPlayer from "~/components/VideoPlayer/VideoPlayer.vue";
@@ -159,7 +158,7 @@ export default {
       let apiKey = "6B2007FC-671E-4A3C-A843-326LDDF9410F";
       let secretKey = "4e34c141e847d71141e3d542d30ffd8d3932e8e9";
 
-      let subject = "Pago Prueba Web";
+      let subject = "PagoPruebaWeb";
       let currency = "CLP";
       let amount = "5000";
       let email = "carlobernucci@gmail.com";
@@ -168,9 +167,9 @@ export default {
       let uriObtenerEstadoPago =
         "https://sandbox.flow.cl/api/payment/getStatus";
       let urlConfirmation =
-        "https://us-central1-cuarentime-test.cloudfunctions.net/confirmacion";
+        "linkConfirmation";
       let urlReturn =
-        "https://us-central1-cuarentime-test.cloudfunctions.net/randomNumber";
+        "linkReturn";
 
       let parametrosOrdenados =
         "amount" +
@@ -188,38 +187,28 @@ export default {
         "urlReturn" +
         urlReturn;
 
-      var arrParametros = [];
-      for (var i = 0; i < parametrosOrdenados.length; i++) {
-        arrParametros.push(parametrosOrdenados.charCodeAt(i));
-      }
-      var arrSecretKey = [];
-      for (var i = 0; i < secretKey.length; i++) {
-        arrSecretKey.push(secretKey.charCodeAt(i));
-      }
-      const hashDigest = sha256(arrSecretKey);
-      const sign = Base64.stringify(sha256(arrParametros, hashDigest));
+      const sign = hmacSHA256(parametrosOrdenados, secretKey).toString();
       console.log(sign);
 
       let response = await axios
         .post(
           uriCrearPago +
-            '?amount="' +
+            '?amount=' +
             amount +
-            '"&apiKey="' +
+            '&apiKey=' +
             apiKey +
-            '"&commerceOrder="' +
+            '&commerceOrder=' +
             commerceOrder +
-            '"&email="' +
+            '&email=' +
             email +
-            '"&subject="' +
+            '&subject=' +
             subject +
-            '"&urlConfirmation="' +
+            '&urlConfirmation=' +
             urlConfirmation +
-            '"&urlReturn="' +
+            'urlReturn=' +
             urlReturn +
-            '"&s="' +
-            sign +
-            '"',
+            '&s=' +
+            sign,
           {
             amount: amount,
             apiKey: "6B2007FC-671E-4A3C-A843-326LDDF9410F",
@@ -229,11 +218,6 @@ export default {
             urlConfirmation: urlConfirmation,
             urlReturn: urlReturn,
             s: sign,
-          },
-          {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-            },
           }
         )
         .catch((e) => {

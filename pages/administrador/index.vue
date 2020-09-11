@@ -127,7 +127,7 @@ import SideBarPageAdmin from "~/components/SideBarPageAdmin/SideBarPageAdmin.vue
 import { mdbBarChart, mdbContainer } from "mdbvue";
 /* import { mdbPieChart, mdbContainer } from "mdbvue"; */
 export default {
-  layout: "admin",
+  layout: "superAdmin",
   name: "Dashboard",
   components: {
     SideBarPageAdmin,
