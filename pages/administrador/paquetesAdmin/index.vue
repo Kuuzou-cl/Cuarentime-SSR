@@ -28,7 +28,7 @@
                         <div class></div>
                       </div>
                     </div>
-                    <h4 class="card-tittle">Paquetes</h4>
+                    <h4 class="card-tittle">Aprobación de paquetes</h4>
                     <mdb-container>
                       <mdb-pie-chart
                         data-labels
@@ -54,15 +54,14 @@
                         <div class></div>
                       </div>
                     </div>
-                    <h4 class="card-tittle">Articulos por categorias</h4>
+                    <h4 class="card-tittle">Paquetes por categorias</h4>
                     <mdb-container>
-                      <mdb-pie-chart
-                        data-labels
-                        :data="pieChartData"
-                        :options="pieChartOptions"
-                        :width="600"
+                      <mdb-horizontal-bar-chart
+                        :data="horizontalBarChartData"
+                        :options="horizontalBarChartOptions"
+                        :width="700"
                         :height="300"
-                      />
+                      ></mdb-horizontal-bar-chart>
                     </mdb-container>
                   </div>
                 </div>
@@ -98,7 +97,7 @@
                     <td>4</td>
                     <td>Cocina</td>
                     <td>
-                      <select name="" id="">
+                      <select name id>
                         <option value="0">Seleccione una opcion</option>
                         <option value="1">Aprobar</option>
                         <option value="2">Reprobar</option>
@@ -112,7 +111,7 @@
                     <td>3</td>
                     <td>Deporte</td>
                     <td>
-                      <select name="" id="">
+                      <select name id>
                         <option value="0">Seleccione una opcion</option>
                         <option value="1">Aprobar</option>
                         <option value="2">Reprobar</option>
@@ -126,7 +125,7 @@
                     <td>7</td>
                     <td>Tecnologia</td>
                     <td>
-                      <select name="" id="">
+                      <select name id>
                         <option value="0">Seleccione una opcion</option>
                         <option value="1">Aprobar</option>
                         <option value="2">Reprobar</option>
@@ -181,10 +180,10 @@
                     <td>4</td>
                     <td>Cocina</td>
                     <td>
-                      <select name="" id="">
+                      <select name id>
                         <option value="0">Seleccione una opcion</option>
                         <option value="1">Aprobar</option>
-                        <option value="2">Reprobar</option>
+                        <option value="2">Eliminar</option>
                       </select>
                     </td>
                   </tr>
@@ -195,10 +194,10 @@
                     <td>3</td>
                     <td>Deporte</td>
                     <td>
-                      <select name="" id="">
+                      <select name id>
                         <option value="0">Seleccione una opcion</option>
                         <option value="1">Aprobar</option>
-                        <option value="2">Reprobar</option>
+                        <option value="2">Eliminar</option>
                       </select>
                     </td>
                   </tr>
@@ -209,10 +208,10 @@
                     <td>7</td>
                     <td>Tecnologia</td>
                     <td>
-                      <select name="" id="">
+                      <select name id>
                         <option value="0">Seleccione una opcion</option>
                         <option value="1">Aprobar</option>
-                        <option value="2">Reprobar</option>
+                        <option value="2">Eliminar</option>
                       </select>
                     </td>
                   </tr>
@@ -246,14 +245,7 @@
 <script>
 import axios from "axios";
 import SideBarPageAdmin from "~/components/SideBarPageAdmin/SideBarPageAdmin.vue";
-import { mdbPieChart, mdbContainer } from "mdbvue";
-import {
-  mdbDropdown,
-  mdbDropdownItem,
-  mdbDropdownMenu,
-  mdbDropdownToggle,
-} from "mdbvue";
-/* import { mdbPieChart, mdbContainer } from "mdbvue"; */
+import { mdbPieChart, mdbContainer, mdbHorizontalBarChart } from "mdbvue";
 export default {
   layout: "superAdmin",
   name: "Dashboard",
@@ -261,10 +253,7 @@ export default {
     SideBarPageAdmin,
     mdbPieChart,
     mdbContainer,
-    mdbDropdown,
-    mdbDropdownItem,
-    mdbDropdownMenu,
-    mdbDropdownToggle,
+    mdbHorizontalBarChart,
   },
   data() {
     return {
@@ -295,6 +284,55 @@ export default {
               return `${Math.round((value / setValue) * 100)}%`;
             },
           },
+        },
+      },
+      horizontalBarChartData: {
+        labels: ["Cocina", "Tecnologia", "Salud", "Deporte", "Economia"],
+        datasets: [
+          {
+            label: "Paquetes",
+            data: [12, 19, 3, 5, 6],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(255, 159, 64, 0.2)",
+            ],
+            borderColor: [
+              "rgba(255,99,132,1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(255, 159, 64, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      },
+      horizontalBarChartOptions: {
+        responsive: false,
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              barPercentage: 1,
+              gridLines: {
+                display: true,
+                color: "rgba(0, 0, 0, 0.1)",
+              },
+            },
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: true,
+                color: "rgba(0, 0, 0, 0.1)",
+              },
+            },
+          ],
         },
       },
     };
