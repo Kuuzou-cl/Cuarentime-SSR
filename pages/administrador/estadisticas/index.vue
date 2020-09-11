@@ -24,7 +24,7 @@
                       <div
                         class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                       >Categorias</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">6</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{categorias.length}}</div>
                     </div>
                   </div>
                 </div>
@@ -38,7 +38,7 @@
                       <div
                         class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                       >Articulos</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{articulos.length}}</div>
                     </div>
                   </div>
                 </div>
@@ -52,7 +52,7 @@
                       <div
                         class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                       >Paquetes</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{paquetes.length}}</div>
                     </div>
                   </div>
                 </div>
@@ -66,7 +66,7 @@
                       <div
                         class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                       >Usuarios</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">7</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{usuarios.length}}</div>
                     </div>
                   </div>
                 </div>
@@ -149,6 +149,30 @@ export default {
     mdbLineChart,
     mdbContainer,
     mdbPieChart,
+  },
+  async asyncData({ store }) {
+    let paquetes;
+    let articulos;
+    let usuarios;
+    let categorias;
+    await store.dispatch("getArticulos").then((paq) => {
+      articulos = paq;
+    });
+    await store.dispatch("getPaquetes").then((paq) => {
+      paquetes = paq;
+    });
+    await store.dispatch("getUsusarios").then((paq) => {
+      usuarios = paq;
+    });
+    await store.dispatch("getCategorias").then((paq) => {
+      categorias = paq;
+    });
+    return {
+      paquetes: paquetes,
+      articulos: articulos, 
+      usuarios: usuarios,
+      categorias: categorias
+    };
   },
   data() {
     return {
