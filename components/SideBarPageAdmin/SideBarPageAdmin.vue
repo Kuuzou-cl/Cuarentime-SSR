@@ -16,7 +16,7 @@
     <hr class="sidebar-divider my-0" />
     <li class="nav-item active">
       <nuxt-link :to="'/administrador'" class="nav-link">
-        <span>Inicio</span>
+        <span>Resumen</span>
       </nuxt-link>
     </li>
     <hr class="sidebar-divider" />

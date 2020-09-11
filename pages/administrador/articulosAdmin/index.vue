@@ -16,7 +16,7 @@
         <div class="need-space"></div>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-6 grid-margin stretch-car">
+            <div class="col-lg-12 grid-margin stretch-car">
               <div class="card shadow">
                 <div class="card-body">
                   <div>
@@ -42,7 +42,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 grid-margin stretch-car">
+            <!-- <div class="col-lg-6 grid-margin stretch-car">
               <div class="card shadow">
                 <div class="card-body">
                   <div>
@@ -67,7 +67,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="need-space"></div>
           <div class="need-space"></div>
@@ -98,8 +98,8 @@
                     <td>
                       <select name="" id="">
                         <option value="0">Seleccione una opcion</option>
-                        <option value="1">Aprobar</option>
-                        <option value="2">Reprobar</option>
+                        <option value="1">Ocultar</option>
+                        <option value="2">Eliminar</option>
                       </select>
                     </td>
                   </tr>
@@ -111,8 +111,8 @@
                     <td>
                       <select name="" id="">
                         <option value="0">Seleccione una opcion</option>
-                        <option value="1">Aprobar</option>
-                        <option value="2">Reprobar</option>
+                        <option value="1">Ocultar</option>
+                        <option value="2">Eliminar</option>
                       </select>
                     </td>
                   </tr>
@@ -124,8 +124,8 @@
                     <td>
                       <select name="" id="">
                         <option value="0">Seleccione una opcion</option>
-                        <option value="1">Aprobar</option>
-                        <option value="2">Reprobar</option>
+                        <option value="1">Ocultar</option>
+                        <option value="2">Eliminar</option>
                       </select>
                     </td>
                   </tr>

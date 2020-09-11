@@ -111,7 +111,7 @@
                         <div class></div>
                       </div>
                     </div>
-                    <h4 class="card-tittle">Categorias más vistas</h4>
+                    <h4 class="card-tittle">Categorias con más archivos</h4>
                     <mdb-container>
                       <mdb-pie-chart
                         data-labels
