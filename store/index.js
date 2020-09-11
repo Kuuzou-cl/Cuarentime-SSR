@@ -93,14 +93,15 @@ export const actions = {
         .then((querySnapshot) => {
           const usuariosReferencia = [];
           querySnapshot.forEach((doc) => {
-            let usuarioReferencia = {};
-            usuariosReferencia.id = doc.id;
-            usuariosReferencia.nombre = doc.data().nombre;
-            usuariosReferencia.tipo = doc.data().tipo;
-            usuariosReferencia.imagen = doc.data().imagen;
-            usuariosReferencia.paquetes = doc.data().paquetes;
-            usuariosReferencia.paquetesComprados = doc.data().paquetesComprados;
-            usuariosReferencia.push(usuarioReferencia);
+            if (!doc.data().tipo) {
+              let usuarioReferencia = {};
+              usuariosReferencia.id = doc.id;
+              usuariosReferencia.nombre = doc.data().nombre;
+              usuariosReferencia.imagen = doc.data().imagen;
+              usuariosReferencia.paquetes = doc.data().paquetes;
+              usuariosReferencia.paquetesComprados = doc.data().paquetesComprados;
+              usuariosReferencia.push(usuarioReferencia);
+            }
           });
           usuarios = usuariosReferencia;
         });
