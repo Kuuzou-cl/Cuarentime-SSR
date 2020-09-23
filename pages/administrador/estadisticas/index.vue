@@ -161,7 +161,7 @@ export default {
     await store.dispatch("getPaquetes").then((paq) => {
       paquetes = paq;
     });
-    await store.dispatch("getUsusarios").then((paq) => {
+    await store.dispatch("getUsuarios").then((paq) => {
       usuarios = paq;
     });
     await store.dispatch("getCategorias").then((paq) => {

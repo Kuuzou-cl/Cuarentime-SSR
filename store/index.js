@@ -188,6 +188,31 @@ export const actions = {
       console.log(error)
     }
   },
+  async getPaquetesNoAprobados({ commit }, { id }) {
+    let paquetes;
+    try {
+      await this.$fireStore
+        .collection("paquetes").where("aprobado", "==", "").where("publicado", "==", "false")
+        .get()
+        .then((querySnapshot) => {
+          const paquetesReferencia = [];
+          querySnapshot.forEach((doc) => {
+            let paqueteReferencia = {};
+            paqueteReferencia.id = doc.id;
+            paqueteReferencia.imagen = doc.data().imagen;
+            paqueteReferencia.precio = doc.data().precio;
+            paqueteReferencia.titulo = doc.data().titulo;
+            paqueteReferencia.resumen = doc.data().resumen;
+            paqueteReferencia.usuario = doc.data().usuario;
+            paquetesReferencia.push(paqueteReferencia);
+          });
+          paquetes = paquetesReferencia;
+        });
+      return paquetes;
+    } catch (error) {
+      console.log(error)
+    }
+  },
   async getArticulos() {
     let articulos;
     try {
