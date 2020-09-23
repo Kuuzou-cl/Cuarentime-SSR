@@ -58,40 +58,21 @@
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Videos</th>
-                    <th scope="col">Comentarios</th>
+                    <th scope="col">Resumen</th>
                     <th scope="col">Aprobado por</th>
                     <th scope="col">Categoría</th>
-                    <th scope="col">Publicación</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>1</th>
-                    <td>Mark</td>
-                    <td>Pollo con arroz</td>
-                    <td>@mdo</td>
-                    <td>Juan Sepulveda Acevedo</td>
-                    <td>Cocina</td>
-                    <td>Aprobada</td>
-                  </tr>
-                  <tr>
-                    <th>2</th>
-                    <td>Jacob</td>
-                    <td>Futbol</td>
-                    <td>@fat</td>
-                    <td>Juan Sepulveda Acevedo</td>
-                    <td>Deporte</td>
-                    <td>Reprobada</td>
-                  </tr>
-                  <tr>
-                    <th>3</th>
-                    <td>Larry</td>
-                    <td>Limpiar PC</td>
-                    <td>@twitter</td>
-                    <td>Juan Sepulveda Acevedo</td>
-                    <td>Tecnologia</td>
-                    <td>Aprobada</td>
+                  <tr v-for="(paquete,index) in paquetes"
+                  :key="index">
+                    <th>{{index+1}}</th>
+                    <td>{{paquete.usuario}}</td>
+                    <td>{{paquete.titulo}}</td>
+                    <td>{{paquete.resumen}}</td>
+                    <td>{{paquete.aprobado}}</td>
+                    <td>{{paquete.categoria}}</td>
                   </tr>
 
                   <!-- <tr v-for="(paquete,index) in paquetes" :key="index">
@@ -135,6 +116,15 @@ export default {
     mdbContainer,
     /* mdbPieChart,
     mdbContainer, */
+  },
+  async asyncData({ store }) {
+    let paquetes;
+    await store.dispatch("getPaquetesSubidos").then((paq) => {
+      paquetes = paq;
+    });
+    return {
+      paquetes: paquetes,
+    };
   },
   data() {
     return {

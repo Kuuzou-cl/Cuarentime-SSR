@@ -83,52 +83,20 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col">Categoría</th>
-                    <th scope="col">Acción</th>
+                    <th scope="col">Titulo Articulo</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>1</th>
-                    <td>Mark</td>
-                    <td>Pollo con arroz</td>
-                    <td>Cocina</td>
-                    <td>
-                      <select name="" id="">
-                        <option value="0">Seleccione una opcion</option>
-                        <option value="1">Ocultar</option>
-                        <option value="2">Eliminar</option>
-                      </select>
-                    </td>
+                  <tr v-for="(articulo,index) in articulos"
+                  :key="index">
+                    <td>{{index+1}}</td>
+                    <td>{{articulo.id}}</td>
+                    <td>{{articulo.usuario}}</td>
+                    <td>{{articulo.titulo}}</td>
                   </tr>
-                  <tr>
-                    <th>2</th>
-                    <td>Jacob</td>
-                    <td>Futbol</td>
-                    <td>Deporte</td>
-                    <td>
-                      <select name="" id="">
-                        <option value="0">Seleccione una opcion</option>
-                        <option value="1">Ocultar</option>
-                        <option value="2">Eliminar</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>3</th>
-                    <td>Larry</td>
-                    <td>Limpiar PC</td>
-                    <td>Tecnologia</td>
-                    <td>
-                      <select name="" id="">
-                        <option value="0">Seleccione una opcion</option>
-                        <option value="1">Ocultar</option>
-                        <option value="2">Eliminar</option>
-                      </select>
-                    </td>
-                  </tr>
+                  
 
                   <!-- <tr v-for="(paquete,index) in paquetes" :key="index">
                     <th scope="row">1</th>
@@ -178,6 +146,15 @@ export default {
     mdbDropdownItem,
     mdbDropdownMenu,
     mdbDropdownToggle,
+  },
+  async asyncData({ store }) {
+    let articulos;
+    await store.dispatch("getArticulos").then((paq) => {
+      articulos = paq;
+    });
+    return {
+      articulos: articulos,
+    };
   },
   data() {
     return {
