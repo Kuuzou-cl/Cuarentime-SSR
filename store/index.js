@@ -110,6 +110,32 @@ export const actions = {
       console.log(error)
     }
   },
+  //
+  async getUsuarioAdmin() {
+    let usuarios;
+    try {
+      await this.$fireStore
+        .collection("usuarios")
+        .get()
+        .then((querySnapshot) => {
+          const usuariosReferencia = [];
+          querySnapshot.forEach((doc) => {
+            if (!doc.data().tipo) {
+              let usuarioReferencia = {};
+              usuarioReferencia.id = doc.id;
+              usuarioReferencia.usuario = doc.data().usuario;
+              usuarioReferencia.nombre = doc.data().nombre;
+              usuariosReferencia.push(usuarioReferencia);
+            }
+          });
+          usuarios = usuariosReferencia;
+        });
+      return usuarios;
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  //
   async getCategorias() {
     let categorias;
     try {

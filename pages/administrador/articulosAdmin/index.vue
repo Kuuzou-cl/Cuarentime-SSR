@@ -84,7 +84,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
+                    <th scope="col">Usuario</th>
                     <th scope="col">Titulo Articulo</th>
                   </tr>
                 </thead>
@@ -93,7 +93,7 @@
                   :key="index">
                     <td>{{index+1}}</td>
                     <td>{{articulo.id}}</td>
-                    <td>{{articulo.usuario}}</td>
+                    <td>{{buscadprNombreUsuario(articulo.usuario)}}</td>
                     <td>{{articulo.titulo}}</td>
                   </tr>
                   
@@ -149,11 +149,16 @@ export default {
   },
   async asyncData({ store }) {
     let articulos;
+    let usuarios;
     await store.dispatch("getArticulos").then((paq) => {
       articulos = paq;
     });
+    await store.dispatch("getUsuarioAdmin").then((paq) => {
+      usuarios = paq;
+    });
     return {
       articulos: articulos,
+      usuarios: usuarios,
     };
   },
   data() {
@@ -201,7 +206,17 @@ export default {
       },
     };
   },
-  methods: {},
+  methods: {
+    buscadprNombreUsuario(idUser){
+      for (let index = 0; index < this.usuarios.length; index++) {
+        console.log(this.usuarios[index])
+        if (idUser == this.usuarios[index].usuario) {
+          return this.usuarios[index].nombre
+        }
+      }
+      return "Nombre de Usuario no encontrado"
+    }
+  },
   computed: {},
 };
 </script>

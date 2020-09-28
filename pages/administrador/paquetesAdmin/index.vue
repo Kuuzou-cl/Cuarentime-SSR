@@ -72,7 +72,7 @@
           <div class="need-space"></div>
           <div class="row justify-content-center">
             <div class="col-lg-12">
-              <h4>Ultimos Paquetes Subidos</h4>
+              <h4>Ultimos Paquetes por Aprobar</h4>
             </div>
           </div>
           <div class="need-space"></div>
@@ -94,7 +94,7 @@
                 :key="index">
                     <td>{{index+1}}</td>
                     <td>{{paquete.id}}</td>
-                    <td>{{paquete.usuario}}</td>
+                    <td>{{buscadprNombreUsuario(paquete.usuario)}}</td>
                     <td>{{paquete.titulo}}</td>
                     <td>{{paquete.precio}}</td>
                     <td>
@@ -143,11 +143,16 @@ export default {
   },
    async asyncData({ store }) {
     let paquetes;
+    let usuarios;
     await store.dispatch("getPaquetesNoAprobados").then((paq) => {
       paquetes = paq;
     });
+    await store.dispatch("getUsuarioAdmin").then((paq) => {
+      usuarios = paq;
+    });
     return {
       paquetes: paquetes,
+      usuarios: usuarios,
     };
   },
   data() {
@@ -232,7 +237,17 @@ export default {
       },
     };
   },
-  methods: {},
+  methods: {
+    buscadprNombreUsuario(idUser){
+      for (let index = 0; index < this.usuarios.length; index++) {
+        console.log(this.usuarios[index])
+        if (idUser == this.usuarios[index].usuario) {
+          return this.usuarios[index].nombre
+        }
+      }
+      return "Nombre de Usuario no encontrado"
+    }
+  },
   computed: {},
 };
 </script>

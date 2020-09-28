@@ -56,7 +56,7 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
+                    <th scope="col">Usuario</th>
                     <th scope="col">Videos</th>
                     <th scope="col">Resumen</th>
                     <th scope="col">Aprobado por</th>
@@ -68,27 +68,12 @@
                   <tr v-for="(paquete,index) in paquetes"
                   :key="index">
                     <th>{{index+1}}</th>
-                    <td>{{paquete.usuario}}</td>
+                    <td>{{buscadprNombreUsuario(paquete.usuario)}}</td>
                     <td>{{paquete.titulo}}</td>
                     <td>{{paquete.resumen}}</td>
                     <td>{{paquete.aprobado}}</td>
-                    <td>{{paquete.categoria}}</td>
+                    <td>{{buscadprNombreCategoria(paquete.categoria)}}</td>
                   </tr>
-
-                  <!-- <tr v-for="(paquete,index) in paquetes" :key="index">
-                    <th scope="row">1</th>
-                    <td>{{paquete.titulo}}</td>
-                    <td>{{paquete.videos.length}}</td>
-                    <td>{{paquete.comentarios.length}}</td>
-                    <td>{{paquete.aprobado}}</td>
-                    <td>
-                      <button type="button" class="btn btn-warning" disabled>Cocina</button>
-                    </td>
-                    <td>{{paquete.publicacion}}</td>
-                    <td>
-                      <button type="button" class="btn btn-info">Editar</button>
-                    </td>
-                  </tr>-->
                 </tbody>
               </table>
             </div>
@@ -106,7 +91,6 @@
 import axios from "axios";
 import SideBarPageAdmin from "~/components/SideBarPageAdmin/SideBarPageAdmin.vue";
 import { mdbBarChart, mdbContainer } from "mdbvue";
-/* import { mdbPieChart, mdbContainer } from "mdbvue"; */
 export default {
   layout: "superAdmin",
   name: "Dashboard",
@@ -114,16 +98,25 @@ export default {
     SideBarPageAdmin,
     mdbBarChart,
     mdbContainer,
-    /* mdbPieChart,
-    mdbContainer, */
+    
   },
   async asyncData({ store }) {
     let paquetes;
+    let usuarios;
+    let categorias;
     await store.dispatch("getPaquetesSubidos").then((paq) => {
       paquetes = paq;
     });
+    await store.dispatch("getUsuarioAdmin").then((paq) => {
+      usuarios = paq;
+    });
+    await store.dispatch("getCategorias").then((paq) => {
+      categorias = paq;
+    });
     return {
       paquetes: paquetes,
+      usuarios: usuarios,
+      categorias: categorias,
     };
   },
   data() {
@@ -196,7 +189,35 @@ export default {
       },
     };
   },
-  methods: {},
+  methods: {
+    buscadprNombreUsuario(idUser){
+      for (let index = 0; index < this.usuarios.length; index++) {
+        console.log(this.usuarios[index])
+        if (idUser == this.usuarios[index].usuario) {
+          return this.usuarios[index].nombre
+        }
+      }
+      return "Nombre de Usuario no encontrado"
+    },
+    buscadprNombreCategoria(idCategoria){
+      for (let index = 0; index < this.categorias.length; index++) {
+        console.log(this.categorias[index])
+        if (idCategoria == this.categorias[index].id) {
+          return this.categorias[index].nombre
+        }
+      }
+      return "Categoria no encontrada"
+    },
+    buscadprNombreAdmin(idAdmin){
+      for (let index = 0; index < this.usuarios.length; index++) {
+        console.log(this.usuarios[index])
+        if (idAdmin == this.usuarios[index].usuario) {
+          return this.usuarios[index].nombre
+        }
+      }
+      return "Paquete no aprobado"
+    },
+  },
   computed: {},
 };
 </script>
