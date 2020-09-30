@@ -72,6 +72,17 @@
 export default {
   name: "SidebarAdmin",
   props: {},
+  async asyncData({ store }) {
+    let usuarios;
+    
+    await store.dispatch("getUsuarioAdmin").then((paq) => {
+      usuarios = paq;
+    });
+    
+    return {
+      usuarios: usuarios,
+    };
+  },
   data() {
     return {};
   },
@@ -81,6 +92,7 @@ export default {
         this.$router.push({ path: "/" });
       } catch (e) {}
     },
+    
   },
 };
 </script>

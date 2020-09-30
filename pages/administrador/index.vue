@@ -98,7 +98,6 @@ export default {
     SideBarPageAdmin,
     mdbBarChart,
     mdbContainer,
-    
   },
   async asyncData({ store }) {
     let paquetes;

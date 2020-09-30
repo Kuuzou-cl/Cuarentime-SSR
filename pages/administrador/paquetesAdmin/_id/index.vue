@@ -18,71 +18,32 @@
           <div class="container">
             <div class="card-pack-default">
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                   <VideoPlayer />
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                   <div class="row">
                     <div class="col-lg-12 text-center">
-                      <h4>{{this.paquete.titulo}}</h4>
+                      <h4>{{ this.paquete.titulo }}</h4>
                     </div>
                   </div>
                   <div class="need-space"></div>
                   <div class="row">
                     <div class="col-lg-12 text-center">
-                      <p>{{this.paquete.resumen}}</p>
-                    </div>
-                  </div>
-                  <div v-if="auth" class="row">
-                    <div class="col-lg-12">
-                      <button class="btn btn-info float-right" @click="comprar()">
-                        Comprar
-                        <font-awesome-icon :icon="['fas', 'shopping-basket']" />
-                      </button>
+                      <p>{{ this.paquete.resumen }}</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="need-space"></div>
               <div class="row" v-if="auth">
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                   <CardPack02 />
-                </div>
-                <div class="col-lg-6">
-                  <div
-                    v-for="(comentario,index) in comentarios"
-                    :key="index"
-                    class="comentario-paquete"
-                  >
-                    <div class="row">
-                      <div class="col-lg-4">
-                        <h6>{{comentario.usuario}}</h6>
-                      </div>
-                      <div class="col-lg-8 text-center">
-                        <p>{{comentario.comentario}}</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div class="row" v-if="!auth">
-                <div class="col-lg-6">
-                  <div
-                    v-for="(comentario,index) in comentarios"
-                    :key="index"
-                    class="comentario-paquete"
-                  >
-                    <div class="row">
-                      <div class="col-lg-4">
-                        <h6>{{comentario.usuario}}</h6>
-                      </div>
-                      <div class="col-lg-8 text-center">
-                        <p>{{comentario.comentario}}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7"></div>
+                <div class="col-lg-12">
                   <table class="table">
                     <thead>
                       <tr>
@@ -97,18 +58,18 @@
                         <th scope="row">#1</th>
                         <td>Pollo Arvejado</td>
                         <td>10 min</td>
-                        <td>
-                          <nuxt-link
-                            :to="'/packs/pack/01/video/01'"
-                            tag="button"
-                            class="btn btn-info"
-                          >
-                            <font-awesome-icon :icon="['fas', 'play']" />
-                          </nuxt-link>
-                        </td>
                       </tr>
                     </tbody>
                   </table>
+                </div>
+              </div>
+              <div class="need-space"></div>
+              <div class="col-lg-12">
+                <div class="row">
+                  <div class="col-lg-12 text-center">
+                    <button class="btn btn-info">Aceptar</button>
+                    <button class="btn btn-info">Rechazar</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -130,7 +91,7 @@ import CardPack02 from "~/components/Card/CardPack02.vue";
 import SideBarPageAdmin from "~/components/SideBarPageAdmin/SideBarPageAdmin.vue";
 
 export default {
-  layout: (ctx) => (ctx.isMobile ? "mobile" : "default"),
+  layout: "superAdmin",
   name: "Dashboard",
   components: {
     SideBarPageAdmin,
