@@ -46,19 +46,28 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <nuxt-link :to="'/categorias'" tag="div" class="nav-link">
-            <font-awesome-icon :icon="['fas', 'layer-group']" class="icon-sidebar-navbar" />
+            <font-awesome-icon
+              :icon="['fas', 'layer-group']"
+              class="icon-sidebar-navbar"
+            />
             <div class="title-sidebar">Categorías</div>
           </nuxt-link>
         </li>
         <li class="nav-item active">
           <nuxt-link :to="'/packs'" tag="div" class="nav-link">
-            <font-awesome-icon :icon="['fas', 'box']" class="icon-sidebar-navbar" />
+            <font-awesome-icon
+              :icon="['fas', 'box']"
+              class="icon-sidebar-navbar"
+            />
             <div class="title-sidebar">Paquetes</div>
           </nuxt-link>
         </li>
         <li class="nav-item active">
           <nuxt-link :to="'/articulos'" tag="div" class="nav-link">
-            <font-awesome-icon :icon="['fas', 'newspaper']" class="icon-sidebar-navbar" />
+            <font-awesome-icon
+              :icon="['fas', 'newspaper']"
+              class="icon-sidebar-navbar"
+            />
             <div class="title-sidebar">Artículos</div>
           </nuxt-link>
         </li>

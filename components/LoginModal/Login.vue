@@ -21,7 +21,15 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content user_card">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <font size="5">
+              <p class="text-info">Login</p>
+            </font>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -30,7 +38,11 @@
               <p v-if="loginError" class="error">{{ loginError }}</p>
             </div>
             <div class="form-row justify-content-center">
-              <input v-model="email" class="custom-input-login" placeholder="Email" />
+              <input
+                v-model="email"
+                class="custom-input-login"
+                placeholder="Email"
+              />
             </div>
             <div class="form-row justify-content-center">
               <input
@@ -42,7 +54,14 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-more" @click="login" data-dismiss="modal">Ingresar</button>
+            <button
+              type="button"
+              class="btn btn-more"
+              @click="login"
+              data-dismiss="modal"
+            >
+              Ingresar
+            </button>
           </div>
         </div>
       </div>

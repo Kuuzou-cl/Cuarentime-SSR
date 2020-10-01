@@ -13,21 +13,51 @@
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-lg-12 text-center">
-                  <h4>{{this.paquete.titulo}}</h4>
+                  <h4>{{ this.paquete.titulo }}</h4>
                 </div>
               </div>
               <div class="need-space"></div>
               <div class="row">
                 <div class="col-lg-12 text-center">
-                  <p>{{this.paquete.resumen}}</p>
+                  <p>{{ this.paquete.resumen }}</p>
                 </div>
               </div>
               <div v-if="auth" class="row">
                 <div class="col-lg-12">
-                  <button class="btn btn-info float-right" @click="comprar()">
+                  <button
+                    class="btn btn-info float-right"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
                     Comprar
                     <font-awesome-icon :icon="['fas', 'shopping-basket']" />
                   </button>
+                  <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal">
+                            &times;
+                          </button>
+                          <h4 class="modal-title">Cuarentime</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>
+                            ¡Descarga nuestra APP para realizar esta compra!
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-default"
+                            data-dismiss="modal"
+                          >
+                            Cerrar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -39,16 +69,16 @@
             </div>
             <div class="col-lg-6">
               <div
-                v-for="(comentario,index) in comentarios"
+                v-for="(comentario, index) in comentarios"
                 :key="index"
                 class="comentario-paquete"
               >
                 <div class="row">
                   <div class="col-lg-4">
-                    <h6>{{comentario.usuario}}</h6>
+                    <h6>{{ comentario.usuario }}</h6>
                   </div>
                   <div class="col-lg-8 text-center">
-                    <p>{{comentario.comentario}}</p>
+                    <p>{{ comentario.comentario }}</p>
                   </div>
                 </div>
               </div>
@@ -57,16 +87,16 @@
           <div class="row" v-if="!auth">
             <div class="col-lg-6">
               <div
-                v-for="(comentario,index) in comentarios"
+                v-for="(comentario, index) in comentarios"
                 :key="index"
                 class="comentario-paquete"
               >
                 <div class="row">
                   <div class="col-lg-4">
-                    <h6>{{comentario.usuario}}</h6>
+                    <h6>{{ comentario.usuario }}</h6>
                   </div>
                   <div class="col-lg-8 text-center">
-                    <p>{{comentario.comentario}}</p>
+                    <p>{{ comentario.comentario }}</p>
                   </div>
                 </div>
               </div>
@@ -87,7 +117,11 @@
                     <td>Pollo Arvejado</td>
                     <td>10 min</td>
                     <td>
-                      <nuxt-link :to="'/packs/pack/01/video/01'" tag="button" class="btn btn-info">
+                      <nuxt-link
+                        :to="'/packs/pack/01/video/01'"
+                        tag="button"
+                        class="btn btn-info"
+                      >
                         <font-awesome-icon :icon="['fas', 'play']" />
                       </nuxt-link>
                     </td>
@@ -166,10 +200,8 @@ export default {
       let uriCrearPago = "https://sandbox.flow.cl/api/payment/create";
       let uriObtenerEstadoPago =
         "https://sandbox.flow.cl/api/payment/getStatus";
-      let urlConfirmation =
-        "linkConfirmation";
-      let urlReturn =
-        "linkReturn";
+      let urlConfirmation = "linkConfirmation";
+      let urlReturn = "linkReturn";
 
       let parametrosOrdenados =
         "amount" +
@@ -193,21 +225,21 @@ export default {
       let response = await axios
         .post(
           uriCrearPago +
-            '?amount=' +
+            "?amount=" +
             amount +
-            '&apiKey=' +
+            "&apiKey=" +
             apiKey +
-            '&commerceOrder=' +
+            "&commerceOrder=" +
             commerceOrder +
-            '&email=' +
+            "&email=" +
             email +
-            '&subject=' +
+            "&subject=" +
             subject +
-            '&urlConfirmation=' +
+            "&urlConfirmation=" +
             urlConfirmation +
-            'urlReturn=' +
+            "urlReturn=" +
             urlReturn +
-            '&s=' +
+            "&s=" +
             sign,
           {
             amount: amount,
